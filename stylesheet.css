@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Hind|Open+Sans|PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=Hind|Open+Sans|PT+Sans|Roboto');
 
 /*Sit colors
 	Blue - #291670;
@@ -11,13 +11,13 @@ body, header, main, section, article, footer, .container, a.navLink, button#btnM
 	flex-wrap: wrap;
 }
 
-body, header, main, footer, article, .container, .navContainer, a.navLink, div.navigation {
+body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation {
 	width: 100%;
 	max-width: 100%;
 }
 
 
-body{
+body, p.blog-post-date {
     margin: 0px;
 }
 
@@ -32,10 +32,49 @@ body{
 header{
 	padding: 10px;
 	z-index: 1;
+	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
 }
 
-header{
-	box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+article{
+	width: calc(100% - 20px);
+	padding: 0px 10px;
+	margin: auto;
+}
+
+h1,h2,h3{
+	font-family: 'Roboto', sans-serif;
+	font-weight: bold;
+	line-height: normal;
+	width: 100%;
+}
+
+h2{
+	font-style: normal;
+	font-size: 1.75em;
+	text-align: center;
+	text-transform: uppercase;
+	color: #291670;
+	margin: 10px auto;
+}
+
+nav{
+    width: 250px;
+    background: #bf9f62;
+    padding-top: 15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    right: 0;
+    position: relative;
+}
+
+nav ul{
+    list-style: none;
+    padding: 0;
+}
+
+section{
+	margin-bottom: 20px;
 }
 
 #btnMobileToggle, .navImage{
@@ -43,7 +82,7 @@ header{
 	height: 25px;
 }
 
-a.navLink, .btn, a#logoLink{
+a.navLink, .btn, a#logoLink, a.property-link, a.blog-post-link, a.link-to-view-all-post{
   	text-decoration: none;
 }
 
@@ -81,20 +120,22 @@ i.fas::before, i.far::before {
     margin: 8%;
 }
 
-nav{
-    width: 250px;
-    background: #bf9f62;
-    padding-top: 15px;
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 30px;
-    right: 0;
-    position: relative;
+.overlay{
+	max-height: 100vh;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 100px;
+	right: 0;
+	background: rgba(255, 255, 255, 0.75);
+	transition: 0.4s;
+	overflow-y: auto;
 }
 
-nav ul{
-    list-style: none;
-    padding: 0;
+.homepage.slider.image {
+    width: 100%;
+    height: 50vh;
 }
 
 img#logo{
@@ -108,4 +149,101 @@ p.navItem {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25em;
     text-transform: uppercase;
+}
+
+.container.property, .container.blog-post {
+    width: 300px;
+    margin: 10px auto;
+    background-color: #291670;
+}
+
+img.property-image, img.blog-post-image {
+    width: 300px;
+    height: 300px;
+    margin: auto;
+}
+
+p.property-name, p.property-location,p.property-price, p.property-size, p.blog-post-name, p.blog-post-excerpt, p.blog-post-date {
+    font-family: 'PT Sans', sans-serif;
+    line-height: normal;
+}
+
+p.property-name, p.property-location, p.blog-post-name, p.blog-post-excerpt {
+    width: 90%;
+    margin: auto;
+}
+
+p.property-name, p.property-location, p.blog-post-name {
+    text-align: center;
+}
+
+p.blog-post-excerpt{
+	text-align: left;
+	padding: 10px;
+}
+
+p.property-name, p.blog-post-name{
+	font-weight: bold;
+	font-size: 1.5em;
+	text-transform: capitalize;
+	color: #BF9F62;
+}
+
+p.property-location, p.blog-post-excerpt{
+	color: #fff;
+	font-size: 1.2em;
+}
+
+i.fas.property {
+    margin: 10px;
+    color: #fff;
+}
+
+p.property-price, p.property-size {
+    color: #fff;
+    margin: auto 5px;
+    font-weight: bold;
+}
+
+a.link-to-view-all-post, a.property-link, a.blog-post-link{
+	font-family: 'Hind', sans-serif;
+}
+
+a.property-link, a.blog-post-link{
+	background: #BF9F62;
+	color: #fff;
+	width: 100%;
+	padding: 10px;
+	font-weight: bold;
+	font-size: 1em;
+	text-align: center;
+	text-transform: capitalize;
+}
+
+section.about-snippet {
+    background: rgba(41,22,112,0.3);
+}
+
+.blog-post-date-container {
+    position: absolute;
+    margin-top: 10px;
+    padding: 5px;
+    background: #BF9F62;
+    border-radius: 0px 10px 10px 0px;
+}
+
+p.blog-post-date{
+	font-weight: bold;
+	font-size: 1em;
+	text-align: right;
+	color: #291670;
+}
+
+a.link-to-view-all-post{
+	padding: 10px;
+	margin: 20px auto;
+	text-align: center;
+	text-transform: uppercase;
+	color: #fff;
+	background: #291670;
 }
