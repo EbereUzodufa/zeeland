@@ -6,18 +6,18 @@
 	white back - #F0F0F0;
 */
 
-body, header, main, section, article, footer, .container, a.navLink, button#btnMobileToggle, nav, div.navigation, a#logoLink {
+body, header, main, section, article, footer, .container, a.navLink, button#btnMobileToggle, nav, div.navigation, a#logoLink, div.footerArea, .social-media-container {
 	display: flex;
 	flex-wrap: wrap;
 }
 
-body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation {
+body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container {
 	width: 100%;
 	max-width: 100%;
 }
 
 
-body, p.blog-post-date {
+body, p.blog-post-date, footer p#copyright {
     margin: 0px;
 }
 
@@ -39,6 +39,10 @@ article{
 	width: calc(100% - 20px);
 	padding: 0px 10px;
 	margin: auto;
+}
+
+h1,h2,h3, footer p, a.footer-link{
+	font-family: 'Roboto', sans-serif;
 }
 
 h1,h2,h3{
@@ -82,7 +86,7 @@ section{
 	height: 25px;
 }
 
-a.navLink, .btn, a#logoLink, a.property-link, a.blog-post-link, a.link-to-view-all-post{
+a.navLink, .btn, a#logoLink, a.property-link, a.blog-post-link, a.link-to-view-all-post, a.footer-link{
   	text-decoration: none;
 }
 
@@ -209,7 +213,7 @@ a.link-to-view-all-post, a.property-link, a.blog-post-link{
 	font-family: 'Hind', sans-serif;
 }
 
-a.property-link, a.blog-post-link{
+a.property-link, a.blog-post-link, footer p#copyright{
 	background: #BF9F62;
 	color: #fff;
 	width: 100%;
@@ -246,4 +250,76 @@ a.link-to-view-all-post{
 	text-transform: uppercase;
 	color: #fff;
 	background: #291670;
+}
+
+footer{
+	margin-top: 30px;
+	background: #291670;
+	padding-top: 20px
+}
+
+img.footer-logo{
+	width: 200px;
+	height: 200px;
+	margin: 10px auto;
+}
+
+footer p#copyright{
+	font-size: 20px;
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+footer p, a.footer-link{
+	color: #fff;
+}
+
+div.footerArea{
+	margin: 10px;
+}
+
+p.miniAbout{
+	text-align: center;
+}
+
+p.miniAbout{
+	width: 100%;
+	margin: 20px auto;
+}
+
+i.fas.footerIcon {
+    margin: 10px;
+    color: #BF9F62;
+}
+
+footer p {
+    width: 200px;
+    margin: 10px;
+}
+
+.social-media-container {
+    margin: 10px;
+}
+
+footer p strong{
+	font-size: 1.25em;
+    color: #BF9F62;
+}
+
+.social-media {
+    margin: auto;
+}
+
+a.social-link {
+    margin: 5px auto;
+}
+
+i.social-media-icon:hover {
+    transition: 0.3s;
+    color: #fff;
+}
+
+i.social-media-icon {
+    font-size: 2.5em;
+    color: #BF9F62;
 }
