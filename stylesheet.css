@@ -6,7 +6,7 @@
 	white back - #F0F0F0;
 */
 
-body, header, main, section, article, footer, .container, a.navLink, button#btnMobileToggle, nav, div.navigation, a#logoLink, div.footerArea, .social-media-container {
+body, header, main, section, article, footer, .container, a.navLink, button#btnMobileToggle, nav, div.navigation, a#logoLink, .social-media-container {
 	display: flex;
 	flex-wrap: wrap;
 }
@@ -143,8 +143,8 @@ i.fas::before, i.far::before {
 }
 
 img#logo{
-	width: 100px;
-	height: 100px;
+	width: 75px;
+	height: 75px;
 }
 
 p.navItem {
@@ -259,8 +259,8 @@ footer{
 }
 
 img.footer-logo{
-	width: 200px;
-	height: 200px;
+	width: 100px;
+	height: 100px;
 	margin: 10px auto;
 }
 
@@ -293,7 +293,6 @@ i.fas.footerIcon {
 }
 
 footer p {
-    width: 200px;
     margin: 10px;
 }
 
@@ -307,7 +306,7 @@ footer p strong{
 }
 
 .social-media {
-    margin: auto;
+    margin: 10px;
 }
 
 a.social-link {
@@ -322,4 +321,78 @@ i.social-media-icon:hover {
 i.social-media-icon {
     font-size: 2.5em;
     color: #BF9F62;
+}
+
+p.footer-contact-detail {
+    width: 250px;
+}
+
+@media screen and (min-width: 1024px) {
+	nav{
+		height: auto;
+	}
+
+	body{
+		overflow-y: scroll;
+	}
+
+	nav ul, .overlay{
+		display: flex;
+		flex-wrap: wrap;
+	}
+	
+	section{
+		width: 900px;
+		max-width: 90%;
+		margin: auto;
+	}
+
+	.overlay{
+		position: inherit;
+	}
+
+	button#btnMobileToggle{display: none;}
+
+	nav, .overlay{
+		width: 100%;
+		padding: 0;
+		background: #fff;
+	}
+
+	nav ul{
+		margin: auto;
+	}
+
+	.navImage, i.navImage{
+		display: none;
+	}
+
+	p.navItem{
+		color: #291670;
+	}
+
+	a.navLink p.navItem:hover{
+		color: #BF9F62;
+	}
+
+	header div.container{
+		width: 100px;
+	}
+
+	header div.navContainer{
+		width: calc(100% - 100px);
+	}
+
+	header{
+		padding: 5px;
+	}
+
+	div.navigation{
+		width: 1024px;
+		margin: auto;
+	}
+
+	footer div.footerArea{
+		width: 30%;
+	}
 }
