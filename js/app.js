@@ -100,7 +100,16 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 
 const fetchProperties = () =>{
 	fetchJSONFromFile(properties, './data/properties.json');
-	console.log("properties", properties);
+	// console.log("properties", properties);
+}
+
+const generatePropertyHTML = () =>{
+	const propertyArticle = document.querySelector('article.article-feartured-properties');
+	if (propertyArticle) {
+		properties.forEach(property =>{
+			console.log(property.id, property);
+		});
+	}
 }
 
 // On application start, perform these
