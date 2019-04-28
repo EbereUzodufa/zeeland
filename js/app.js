@@ -226,6 +226,7 @@ const createPropertyHTML = (property) =>{
 	const aLink = document.createElement('a');
 	aLink.role = "button";
 	aLink.classList.add('property-link');
+	aLink.innerHTML = "Click here to get Details";
 	//Append aLink to divConProperty
 	divConProperty.append(aLink);
 
