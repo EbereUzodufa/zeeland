@@ -185,7 +185,7 @@ p.property-name, p.property-location,p.property-price, p.property-size, p.blog-p
 }
 
 p.property-name, p.property-location, p.blog-post-name, p.blog-post-excerpt {
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -200,14 +200,14 @@ p.blog-post-excerpt{
 
 p.property-name, p.blog-post-name{
 	font-weight: bold;
-	font-size: 1.5em;
-	text-transform: capitalize;
+	font-size: 1.2em;
+	text-transform: uppercase;
 	color: #BF9F62;
 }
 
 p.property-location, p.blog-post-excerpt{
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 i.fas.property {
