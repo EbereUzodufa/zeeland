@@ -63,6 +63,41 @@ const SetAriaBasedOnScreen = () =>{
 	}
 }
 
+//Get the JSON from a lcation
+const fetchJSONFromFile = (arrayEle, file) =>{
+	let arrValue = [];
+
+	function status(response) {
+		//if Promise is Resolsved
+	  if (response.status >= 200 && response.status < 300) {
+	    return Promise.resolve(response)
+	  } else {
+	  	// else - Promise fails/rejected
+	    return Promise.reject(new Error(response.statusText))
+	  }
+	}
+
+	function json(response) {
+	  return response.json()
+	}
+
+	//Fetch to get file using chained Promise
+	fetch(file)
+	  .then(status) 
+	  .then(json)
+	  .then(function(data) {
+	  	//add the values of the data from the JSON file
+	  	const [values] = Object.values(data);
+	  	values.map(value => {
+	  		arrValue.push(value);
+	  		arrayEle.push(value);
+	  	})
+	    console.log('Request succeeded with JSON response', data);
+	  }).catch(function(error) {
+	    console.log('Request failed', error);
+	  });
+}
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
