@@ -21,14 +21,14 @@
         "mainPrice": "₦1,200,000",
         "otherPrices": []
       },
-      "property-size": "600sqm",
-      "property-title": [
+      "propertySize": "600sqm",
+      "propertyTitle": [
         "Certificate of Occupancy (C of O)"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "INTERNATIONAL BREWERIES (second largest in Africa)",
         "NESTLE NIGERIA",
         "HONEYWELL",
@@ -37,7 +37,7 @@
         "ETERNA OIL & GAS",
         "INTERFACT BEVERAGES Plc."
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Perimeter Fence with a beautiful Gate House",
         "Good Security personnel",
         "Good electrification (Estate Electric Transformer)",
@@ -74,20 +74,20 @@
         "mainPrice": "₦18,000,000",
         "otherPrices": []
       },
-      "property-size": "500sqm",
-      "property-title": [
+      "propertySize": "500sqm",
+      "propertyTitle": [
         "Certificate of Occupancy (C of O)"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Omole Phase two",
         "Magodo GRA Phase two",
         "Ikeja City Mall",
         "Lagos State Secretariat"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Perimeter Fence",
         "Gate House",
         "Security personnel",
@@ -125,15 +125,15 @@
           "Discount offer: 5% on Outright Payment"
         ]
       },
-      "property-size": "600sqm",
-      "property-title": [
+      "propertySize": "600sqm",
+      "propertyTitle": [
         "Ratification In process"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [],
-      "property-features": [],
+      "propertyNeighborhood": [],
+      "propertyFeatures": [],
       "map": {
         "lat": 6.457424,
         "lng": 3.397308
@@ -162,19 +162,19 @@
           "No other fees."
         ]
       },
-      "property-size": "",
-      "property-title": [],
-      "property-offer-type": [
+      "propertySize": "",
+      "propertyTitle": [],
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Lekki",
         "Chevron",
         "Victoria Garden City (VGC)",
         "Ikoyi",
         "Victoria Island"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Brand New",
         "Exotically finished",
         "All rooms ensuite",
@@ -227,21 +227,21 @@
           "No other fees."
         ]
       },
-      "property-size": "",
-      "property-title": [
+      "propertySize": "",
+      "propertyTitle": [
         "Governor's Consent"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Lekki",
         "Chevron",
         "Victoria Garden City (VGC)",
         "Ikoyi",
         "Victoria Island"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Luxury finished",
         "Brand New",
         "Fully Detached",
@@ -293,21 +293,21 @@
           "No other fees."
         ]
       },
-      "property-size": "",
-      "property-title": [
+      "propertySize": "",
+      "propertyTitle": [
         "Governor's Consent"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Lekki",
         "Chevron",
         "Victoria Garden City (VGC)",
         "Ikoyi",
         "Victoria Island"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Exquisitely finished",
         "Brand New",
         "Fully Detached",
@@ -358,21 +358,21 @@
           "No other fees."
         ]
       },
-      "property-size": "",
-      "property-title": [
+      "propertySize": "",
+      "propertyTitle": [
         "Governor's Consent"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Lekki",
         "Chevron",
         "Victoria Garden City (VGC)",
         "Ikoyi",
         "Victoria Island"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Exquisitely finished",
         "Brand New",
         "Fully Detached",
@@ -426,14 +426,14 @@
           "Flexible 6 months of ₦13m. Minimum initial deposit of ₦2m and then ₦2.2m monthly in 5 months."
         ]
       },
-      "property-size": "500sqm",
-      "property-title": [
+      "propertySize": "500sqm",
+      "propertyTitle": [
         "Certificate of Occupancy (C of O)"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Crown Estate",
         "Emperor Estate",
         "Novare shopping mall (biggest Shoprite in west Africa)",
@@ -441,7 +441,7 @@
         "Readington School",
         "Shoprite (Novare Mall Lekki)"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Gate house",
         "Perimeter fence",
         "Interlocked road",
@@ -482,14 +482,14 @@
           "Flexible 6 months of ₦10.6m. Minimum initial deposit of ₦2m and then ₦1.72m monthly in 5 months."
         ]
       },
-      "property-size": "400sqm",
-      "property-title": [
+      "propertySize": "400sqm",
+      "propertyTitle": [
         "Certificate of Occupancy (C of O)"
       ],
-      "property-offer-type": [
+      "propertyOfferType": [
         "On Sales"
       ],
-      "property-neighborhood": [
+      "propertyNeighborhood": [
         "Crown Estate",
         "Emperor Estate",
         "Novare shopping mall (biggest Shoprite in west Africa)",
@@ -497,7 +497,7 @@
         "Readington School",
         "Shoprite (Novare Mall Lekki)"
       ],
-      "property-features": [
+      "propertyFeatures": [
         "Gate house",
         "Perimeter fence",
         "Interlocked road",
