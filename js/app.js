@@ -98,6 +98,11 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 	  });
 }
 
+const fetchProperties = () =>{
+	fetchJSONFromFile(properties, './data/properties.json');
+	console.log("properties", properties);
+}
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
