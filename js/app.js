@@ -3,6 +3,8 @@ const btnToggle = document.getElementById('btnMobileToggle');
 const body = document.body;
 
 const overlay = document.querySelector('div.overlay');
+let properties = []; //Expects an array of property objects
+let blog = []; //Expects an Array of blog objects
 
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
