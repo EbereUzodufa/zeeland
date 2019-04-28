@@ -10,11 +10,11 @@ SetAriaHidden = (val) =>{
 }
 
 // Get current year
-const currentYear = () => {
-	let d = new Date();
-	let year = d.getFullYear();
-	document.getElementById('currentYear').innerHTML = year;
-}
+// const currentYear = () => {
+// 	let d = new Date();
+// 	let year = d.getFullYear();
+// 	document.getElementById('currentYear').innerHTML = year;
+// }
 
 // Set overlay
 const setOverlay = (value) =>{
