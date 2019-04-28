@@ -137,6 +137,18 @@ i.fas::before, i.far::before {
 	overflow-y: auto;
 }
 
+[aria-hidden = "true"]{
+	display: none;
+}
+
+[aria-hidden = "false"]{
+	visibility: visible;
+}
+
+.noScroll{
+	overflow: hidden;
+}
+
 .homepage.slider.image {
     width: 100%;
     height: 50vh;
@@ -325,6 +337,12 @@ i.social-media-icon {
 
 p.footer-contact-detail {
     width: 250px;
+}
+
+@media screen and (max-height: 450px) {
+	nav{
+		height: 100%;
+	}
 }
 
 @media screen and (min-width: 1024px) {
