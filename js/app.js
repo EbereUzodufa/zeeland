@@ -33,7 +33,7 @@ const setOverlay = (value) =>{
 };
 
 //Toggle Menu Button
-const toogleMenuBtn = () =>{
+const toggleMenuBtn = () =>{
 	// Toggle Button
 	const iAwesome = document.querySelector('i.fa.fa-bars');
 	let giveOverlay = false;
@@ -52,7 +52,7 @@ const toogleMenuBtn = () =>{
 }
 
 //Change ARIA based on screen width
-const SetAriaBAsedOnScreen = () =>{
+const SetAriaBasedOnScreen = () =>{
 	const screenWidth = screen.width;
 	if (screenWidth >= 1024) {
 		SetAriaHidden('false');
@@ -63,8 +63,8 @@ const SetAriaBAsedOnScreen = () =>{
 
 // On application start, perform these
 const startApp = () => {
-	toogleMenuBtn(); //Enable Toggle Menu
-	SetAriaBAsedOnScreen();
+	toggleMenuBtn(); //Enable Toggle Menu
+	SetAriaBasedOnScreen();
 };
 
 startApp();
