@@ -99,6 +99,54 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 	  });
 }
 
+//Fecth JSON for social Media Icons
+const fetchSocialMedia = () =>{
+	fetchJSONFromFile(socialMedia, './data/socialMediaLinks.json');
+}
+
+//Generate HTML by first, getting each social media link
+const generateSocialMediaHTML = () =>{
+	const socialMediaDiv = document.querySelector('div.social-media-container');
+	if (socialMediaDiv) {
+		socialMedia.forEach(socialMedia =>{
+			socialMediaDiv.append(createSocialMediaHTML(socialMedia));
+		});
+	}
+}
+
+//Create HTML for social media
+const createSocialMediaHTML = (socialMedia) =>{
+	const {
+		id,
+		name,
+		title,
+		link
+	} = socialMedia;
+
+	const divConSocialMedia = document.createElement('div');
+	divConSocialMedia.classList.add('social-media');
+
+	//Create Link
+	const aLink = document.createElement('a');
+	a.link = link;
+	a.target = "blank";
+	a.classList.add('social-link');
+
+	//create abbr
+	const abbr = document.createElement('abbr');
+	abbr.title = title;
+
+	//append i to abbr
+	abbr.append(createFontAwesomeIcon(title));
+
+	//append abbr to aLink
+	aLink.append(abbr);
+	//append abbr to aLink
+	divConSocialMedia.append(aLink);
+	
+	return divConSocialMedia;
+}
+
 //Make me a font awesome icon
 const createFontAwesomeIcon = (title) =>{
 	//create font Awesome icon
