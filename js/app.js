@@ -4,6 +4,7 @@ const body = document.body;
 
 const overlay = document.querySelector('div.overlay');
 let properties = []; //Expects an array of property objects
+let socialMedia = []; //Expects an Array of Social media objects
 let blog = []; //Expects an Array of blog objects
 
 //Set aria-hidden property
@@ -63,7 +64,7 @@ const SetAriaBasedOnScreen = () =>{
 	}
 }
 
-//Get the JSON from a lcation
+//Get the JSON from a location
 const fetchJSONFromFile = (arrayEle, file) =>{
 	let arrValue = [];
 
@@ -98,6 +99,32 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 	  });
 }
 
+//Make me a font awesome icon
+const createFontAwesomeIcon = (title) =>{
+	//create font Awesome icon
+	const iAwesome = document.createElement('i');
+
+	if (title == "facebook") {
+		iAwesome.classList.add('fab', 'fa-facebook', 'social-media-icon');
+	}
+
+	if (title == "twitter") {
+		iAwesome.classList.add('fab', 'fa-twitter-square', 'social-media-icon');
+	}
+
+	if (title == "linkedin") {
+		iAwesome.classList.add('fab', 'fa-linkedin', 'social-media-icon');
+	}
+
+	if (title == "youtube") {
+		iAwesome.classList.add('fab', 'fa-youtube', 'social-media-icon');
+	}
+
+	return iAwesome;
+}
+
+
+//Fecth JSON for Property
 const fetchProperties = () =>{
 	fetchJSONFromFile(properties, './data/properties.json');
 	// console.log("properties", properties);
