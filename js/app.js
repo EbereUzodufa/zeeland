@@ -128,9 +128,9 @@ const createSocialMediaHTML = (socialMedia) =>{
 
 	//Create Link
 	const aLink = document.createElement('a');
-	a.link = link;
-	a.target = "blank";
-	a.classList.add('social-link');
+	aLink.href = link;
+	aLink.target = "blank";
+	aLink.classList.add('social-link');
 
 	//create abbr
 	const abbr = document.createElement('abbr');
@@ -175,6 +175,13 @@ const createFontAwesomeIcon = (title) =>{
 	return iAwesome;
 }
 
+//Let's do this. Get our social media and load them in
+getSocialMedia = () =>{
+	fetchSocialMedia();
+	window.addEventListener('load', function() {
+		generateSocialMediaHTML();
+	});
+}
 
 //Fecth JSON for Property
 const fetchProperties = () =>{
@@ -318,6 +325,7 @@ const createPropertyHTML = (property) =>{
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
 	SetAriaBasedOnScreen();
+	getSocialMedia();
 };
 
 startApp();
