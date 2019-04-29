@@ -120,6 +120,10 @@ const createFontAwesomeIcon = (title) =>{
 		iAwesome.classList.add('fab', 'fa-youtube', 'social-media-icon');
 	}
 
+	if (title == "instagram") {
+		iAwesome.classList.add('fab', 'fa-instagram', 'social-media-icon');
+	}
+
 	return iAwesome;
 }
 
