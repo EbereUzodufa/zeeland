@@ -200,6 +200,15 @@ const generatePropertyHTML = () =>{
 	}
 }
 
+const generateFeaturedPropertyHTML = () =>{
+	const propertyArticle = document.querySelector('article.article-feartured-properties');
+	if (propertyArticle) {
+		for (let i = 0; i < 6; i++) {
+			propertyArticle.append(createPropertyHTML(properties[i]));
+		}
+	}
+}
+
 //Create HTML for Property
 const createPropertyHTML = (property) =>{
 	const {
@@ -241,6 +250,10 @@ const createPropertyHTML = (property) =>{
 	divConProperty.classList.add('container');
 	divConProperty.classList.add('property');
 
+	//Div for row 2
+	const divConPropertyDetail = document.createElement('div');
+	divConPropertyDetail.classList.add('container', 'details');
+
 	// image from images. For now we are using demo
 	const imgProperty = document.createElement('img');
 	imgProperty.classList.add('property-image');
@@ -255,14 +268,14 @@ const createPropertyHTML = (property) =>{
 	paraPropName.classList.add('property-name');
 	paraPropName.innerHTML = name;
 	//Append paragraph prop-name to divConProperty
-	divConProperty.append(paraPropName);
+	divConPropertyDetail.append(paraPropName);
 
 	//paragraph of propery-location
 	const paraPropLoc = document.createElement('p');
 	paraPropLoc.classList.add('property-location');
 	paraPropLoc.innerHTML = address;
 	//Append paragraph prop-location to divConProperty
-	divConProperty.append(paraPropLoc);
+	divConPropertyDetail.append(paraPropLoc);
 
 	//div container for money
 	const divConMoney = document.createElement('div');
@@ -284,7 +297,7 @@ const createPropertyHTML = (property) =>{
 	divConMoney.append(paraPropPrice);
 
 	//Append divConMoney to divConProperty
-	divConProperty.append(divConMoney);
+	divConPropertyDetail.append(divConMoney);
 
 	//div container for property size
 	const divConSize = document.createElement('div');
@@ -306,7 +319,9 @@ const createPropertyHTML = (property) =>{
 	divConSize.append(paraPropSize);
 
 	//Append divConSize to divConProperty
-	divConProperty.append(divConSize);
+	divConPropertyDetail.append(divConSize);
+
+	divConProperty.append(divConPropertyDetail);
 
 	//Create link
 	const aLink = document.createElement('a');
@@ -321,11 +336,20 @@ const createPropertyHTML = (property) =>{
 	return divConProperty;
 }
 
+getProperties = () =>{
+	fetchProperties();
+	window.addEventListener('load', function() {
+		// generatePropertyHTML();
+		generateFeaturedPropertyHTML();
+	});
+}
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
 	SetAriaBasedOnScreen();
 	getSocialMedia();
+	getProperties();
 };
 
 startApp();
