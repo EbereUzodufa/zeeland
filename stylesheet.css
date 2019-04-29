@@ -52,6 +52,19 @@ h1,h2,h3{
 	width: 100%;
 }
 
+h1 {
+    margin: 0px;
+    padding: 50px;
+    text-align: center;
+    vertical-align: middle;
+    text-transform: uppercase;
+	background: #bf9f62;
+	border-bottom-left-radius: 50%;
+    color: #fff;
+    font-size: 2em;
+    font-weight: bold;
+}
+
 h2{
 	font-style: normal;
 	font-size: 1.75em;
@@ -70,18 +83,6 @@ nav{
     padding-bottom: 30px;
     right: 0;
     position: relative;
-}
-
-h1 {
-    margin: 0px;
-    padding: 50px;
-    text-align: center;
-    vertical-align: middle;
-    text-transform: uppercase;
-    background: #bf9f62;
-    color: #fff;
-    font-size: 2em;
-    font-weight: bold;
 }
 
 nav ul{
