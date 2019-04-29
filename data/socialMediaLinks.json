@@ -1,21 +1,24 @@
 {
-	"socialMedia":[
-		{
-			"id": 1,
-			"name": "facebook",
-			"link": "",
-		},{
-			"id": 2,
-			"name": "linkedin",
-			"link": "",
-		},{
-			"id": 3,
-			"name": "instagram",
-			"link": "",
-		},{
-			"id": 4,
-			"name": "youtube",
-			"link": "",
-		}
-	]
+  "socialMedia": [
+    {
+      "id": 1,
+      "name": "facebook",
+      "link": ""
+    },
+    {
+      "id": 2,
+      "name": "linkedin",
+      "link": ""
+    },
+    {
+      "id": 3,
+      "name": "instagram",
+      "link": ""
+    },
+    {
+      "id": 4,
+      "name": "youtube",
+      "link": ""
+    }
+  ]
 }
