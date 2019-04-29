@@ -3,22 +3,26 @@
     {
       "id": 1,
       "name": "facebook",
-      "link": ""
+      "title": "facebook",
+      "link": "https://web.facebook.com/zeelandhomes"
     },
     {
       "id": 2,
       "name": "linkedin",
-      "link": ""
+      "title": "linkedin",
+      "link": "https://www.linkedin.com/in/zeeland-homes-2ba27a183/"
     },
     {
       "id": 3,
       "name": "instagram",
-      "link": ""
+      "title": "instagram",
+      "link": "https://www.instagram.com/zeelandhomes/"
     },
     {
       "id": 4,
       "name": "youtube",
-      "link": ""
+      "title": "youtube",
+      "link": "https://www.youtube.com/channel/UCyhhV4CfXnbuiGnqJ_vtBtg"
     }
   ]
 }
