@@ -11,7 +11,7 @@ body, header, main, section, article, footer, .container, a.navLink, button#btnM
 	flex-wrap: wrap;
 }
 
-body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container {
+body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container, footer p#copyright {
 	width: 100%;
 	max-width: 100%;
 }
@@ -171,12 +171,26 @@ p.navItem {
     width: 300px;
     margin: 10px auto;
     background-color: #291670;
+    display: grid;
+    grid-template-rows: 300px auto 44px;
 }
 
 img.property-image, img.blog-post-image {
     width: 300px;
     height: 300px;
-    margin: auto;
+    margin: 0px;
+    grid-row-end: 2;
+}
+
+a.property-link, a.blog-post-link{
+    grid-row-end: 4;
+    margin: 0px;
+}
+
+.container.details{
+    grid-row-end: 3;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 p.property-name, p.property-location,p.property-price, p.property-size, p.blog-post-name, p.blog-post-excerpt, p.blog-post-date {
@@ -211,7 +225,7 @@ p.property-location, p.blog-post-excerpt{
 }
 
 i.fas.property {
-    margin: 10px;
+    margin: auto 10px;
     color: #fff;
 }
 
@@ -228,7 +242,6 @@ a.link-to-view-all-post, a.property-link, a.blog-post-link{
 a.property-link, a.blog-post-link, footer p#copyright{
 	background: #BF9F62;
 	color: #fff;
-	width: 100%;
 	padding: 10px;
 	font-weight: bold;
 	font-size: 1em;
@@ -264,6 +277,13 @@ a.link-to-view-all-post{
 	background: #291670;
 }
 
+a.link-to-view-all-post:hover {
+    color: #291670;
+    background: #fff;
+    border: 1px solid #291670;
+    padding: 9px 10px;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
@@ -277,8 +297,7 @@ img.footer-logo{
 }
 
 footer p#copyright{
-	font-size: 20px;
-	font-weight: bold;
+	font-family: 'Open Sans', sans-serif;
 	margin-top: 20px;
 }
 
