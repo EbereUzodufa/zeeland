@@ -502,6 +502,7 @@ p.footer-contact-detail {
 
 	p.navItem{
 		color: #291670;
+		text-align: center;
 	}
 
 	a.navLink p.navItem:hover{
