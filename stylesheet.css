@@ -351,6 +351,11 @@ figure {
     grid-template-columns: 300px;
 }
 
+img.investor-img {
+    width: 300px;
+    margin: 0px auto;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
