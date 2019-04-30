@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Hind|Open+Sans|PT+Sans|Roboto');
 
 /*Sit colors
-	Blue - #291670;
-	Gold - #bf9f62;
-	white back - #F0F0F0;
+	Blue - #291670   rgb(40, 22, 112);
+	Gold - #bf9f62  rgb(191, 159, 98);
+	white back - #F0F0F0  rgb(240, 240, 240);
 */
 
 body, header, main, section, article, footer, .container, a.navLink, button#btnMobileToggle, nav, div.navigation, a#logoLink, .social-media-container, div.fields, form, div.contact.field {
