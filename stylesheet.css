@@ -470,12 +470,12 @@ p.footer-contact-detail {
 		flex-wrap: wrap;
 	}
 	
-	section{
+	article{
 		max-width: 90%;
 		margin: auto;
 	}
 
-	section.fullWidth{
+	.fullWidth{
 		width: 100%;
 		max-width: 100%;
 	}
