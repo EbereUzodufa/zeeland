@@ -69,7 +69,7 @@ h2{
 	font-style: normal;
 	font-size: 1.75em;
 	text-align: center;
-	text-transform: uppercase;
+	text-transform: capitalize;
 	color: #291670;
 	margin: 10px auto;
 }
@@ -471,7 +471,7 @@ p.footer-contact-detail {
 	}
 	
 	article{
-		max-width: 90%;
+		max-width: 80%;
 		margin: auto;
 	}
 
