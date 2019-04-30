@@ -380,6 +380,18 @@ p.signed strong{
 	color: #291670;
 }
 
+.core-values.container {
+    margin: 10px 0px;
+}
+
+.core-values.container p {
+    margin: 0px;
+}
+
+h3.core-value {
+    margin: 0px;
+}
+
 .our-core-principles.container {
     width: 300px;
     margin: 10px auto;
