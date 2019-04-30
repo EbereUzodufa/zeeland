@@ -11,7 +11,7 @@ body, header, main, section, article, footer, .container, a.navLink, button#btnM
 	flex-wrap: wrap;
 }
 
-body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container, footer p#copyright, div.fields, form, label, div.fields input, div.fields textarea, div.contact.field, #googleMapAddress {
+body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container, footer p#copyright, div.fields, form, label, div.fields input, div.fields textarea, div.contact.field, #googleMapAddress, p{
 	width: 100%;
 	max-width: 100%;
 }
@@ -255,7 +255,8 @@ a.property-link, a.blog-post-link{
 
 p.property-name, p.property-location,p.property-price, p.property-size, p.blog-post-name, p.blog-post-excerpt, p.blog-post-date {
     font-family: 'PT Sans', sans-serif;
-    line-height: normal;
+	line-height: normal;
+	width: auto;
 }
 
 p.property-name, p.property-location, p.blog-post-name, p.blog-post-excerpt {
