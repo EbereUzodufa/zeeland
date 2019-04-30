@@ -58,7 +58,7 @@ h1 {
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
-	background: #bf9f62;
+	background:  rgba(40, 22, 112, 0.6);
 	border-bottom-left-radius: 50%;
     color: #fff;
     font-size: 2em;
@@ -190,7 +190,7 @@ a.contact-email, a.contact-tel{
 }
 
 .title-wrap.container {
-    background: rgba(40, 22, 112, 0.6);
+	background: #bf9f62;
 }
 
 div.contact.field {
