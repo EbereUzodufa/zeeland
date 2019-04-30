@@ -108,8 +108,7 @@ const fetchSocialMedia = () =>{
 const generateSocialMediaHTML = () =>{
 	const socialMediaDiv = document.querySelector('div.social-media-container');
 	if (socialMediaDiv) {
-		const div = document.createElement('div');
-		div.classList.add('container');
+		const div = document.createDocumentFragment();
 		socialMedia.forEach(socialMedia =>{
 			div.append(createSocialMediaHTML(socialMedia));
 		});
@@ -196,8 +195,7 @@ const fetchProperties = () =>{
 const generatePropertyHTML = () =>{
 	const propertyArticle = document.querySelector('article.article-properties');
 	if (propertyArticle) {
-		const div = document.createElement('div');
-		div.classList.add('container');
+		const div = document.createDocumentFragment();
 		properties.forEach(property =>{
 			// console.log(property.id, property);
 			div.append(createPropertyHTML(property));
@@ -209,8 +207,7 @@ const generatePropertyHTML = () =>{
 const generateFeaturedPropertyHTML = () =>{
 	const propertyArticle = document.querySelector('article.article-feartured-properties');
 	if (propertyArticle) {
-		const div = document.createElement('div');
-		div.classList.add('container');
+		const div = document.createDocumentFragment();
 		for (let i = 0; i < 6; i++) {
 			div.append(createPropertyHTML(properties[i]));
 		}
@@ -362,10 +359,9 @@ const fetchBlog = () =>{
 const generateBlogHTML = () =>{
 	const blogArticle = document.querySelector('article.article-blog');
 	if (blogArticle) {
-		const div = document.createElement('div');
-		div.classList.add('container');
+		const div = document.createDocumentFragment();
 		blog.forEach(post =>{
-			div.append(createBlogHTML(post));
+			blogArticle.append(createBlogHTML(post));
 		});
 		blogArticle.append(div);
 	}
