@@ -345,6 +345,12 @@ button.btn:hover, a.link-to-view-all-post:hover {
     padding: 9px 10px;
 }
 
+figure {
+    margin: auto;
+    display: grid;
+    grid-template-columns: 300px;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
