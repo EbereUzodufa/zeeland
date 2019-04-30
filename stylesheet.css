@@ -189,6 +189,10 @@ a.contact-email, a.contact-tel{
     margin: auto 5px;
 }
 
+.title-wrap.container {
+    background: rgba(40, 22, 112, 0.6);
+}
+
 div.contact.field {
     margin: 5px;
 }
