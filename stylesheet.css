@@ -377,6 +377,14 @@ p.signed strong{
 	color: #291670;
 }
 
+.our-core-priinciples.container {
+    width: 300px;
+    margin: 10px auto;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: auto 200px;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
