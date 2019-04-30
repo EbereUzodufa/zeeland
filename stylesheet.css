@@ -385,6 +385,12 @@ p.signed strong{
     grid-template-columns: auto 200px;
 }
 
+h3.our-core-priniciple {
+    grid-column-end: 3;
+    margin: 0px;
+    font-size: 1.1em;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
