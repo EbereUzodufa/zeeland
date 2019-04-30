@@ -108,9 +108,12 @@ const fetchSocialMedia = () =>{
 const generateSocialMediaHTML = () =>{
 	const socialMediaDiv = document.querySelector('div.social-media-container');
 	if (socialMediaDiv) {
+		const div = document.createElement('div');
+		div.classList.add('container');
 		socialMedia.forEach(socialMedia =>{
-			socialMediaDiv.append(createSocialMediaHTML(socialMedia));
+			div.append(createSocialMediaHTML(socialMedia));
 		});
+		socialMediaDiv.append(div);
 	}
 }
 
@@ -193,19 +196,25 @@ const fetchProperties = () =>{
 const generatePropertyHTML = () =>{
 	const propertyArticle = document.querySelector('article.article-properties');
 	if (propertyArticle) {
+		const div = document.createElement('div');
+		div.classList.add('container');
 		properties.forEach(property =>{
 			// console.log(property.id, property);
-			propertyArticle.append(createPropertyHTML(property));
+			div.append(createPropertyHTML(property));
 		});
+		propertyArticle.append(div);
 	}
 }
 
 const generateFeaturedPropertyHTML = () =>{
 	const propertyArticle = document.querySelector('article.article-feartured-properties');
 	if (propertyArticle) {
+		const div = document.createElement('div');
+		div.classList.add('container');
 		for (let i = 0; i < 6; i++) {
-			propertyArticle.append(createPropertyHTML(properties[i]));
+			div.append(createPropertyHTML(properties[i]));
 		}
+		propertyArticle.append(div);
 	}
 }
 
@@ -353,9 +362,12 @@ const fetchBlog = () =>{
 const generateBlogHTML = () =>{
 	const blogArticle = document.querySelector('article.article-blog');
 	if (blogArticle) {
+		const div = document.createElement('div');
+		div.classList.add('container');
 		blog.forEach(post =>{
-			blogArticle.append(createBlogHTML(post));
+			div.append(createBlogHTML(post));
 		});
+		blogArticle.append(div);
 	}
 }
 
