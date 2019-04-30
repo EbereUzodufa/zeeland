@@ -344,6 +344,11 @@ getProperties = () =>{
 	});
 }
 
+//Get Blog data
+const fetchBlog = () =>{
+	fetchJSONFromFile(blog, './data/blog-posts.json');
+}
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
