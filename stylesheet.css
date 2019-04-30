@@ -224,7 +224,8 @@ p.navItem {
     color: #fff;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.25em;
-    text-transform: uppercase;
+	text-transform: uppercase;
+	width: auto;
 }
 
 .container.property, .container.blog-post {
