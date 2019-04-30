@@ -366,6 +366,16 @@ figcaption.investor-name {
     background: #f0f0f0;
 }
 
+p.signed {
+    text-align: right;
+    font-size: 0.95em;
+    font-style: oblique;
+}
+
+p.signed strong{
+	color: #291670;
+}
+
 footer{
 	margin-top: 30px;
 	background: #291670;
