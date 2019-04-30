@@ -191,7 +191,7 @@ const fetchProperties = () =>{
 
 //Generate HTML by first, getting each property
 const generatePropertyHTML = () =>{
-	const propertyArticle = document.querySelector('article.article-feartured-properties');
+	const propertyArticle = document.querySelector('article.article-properties');
 	if (propertyArticle) {
 		properties.forEach(property =>{
 			// console.log(property.id, property);
@@ -339,7 +339,7 @@ const createPropertyHTML = (property) =>{
 getProperties = () =>{
 	fetchProperties();
 	window.addEventListener('load', function() {
-		// generatePropertyHTML();
+		generatePropertyHTML();
 		generateFeaturedPropertyHTML();
 	});
 }
