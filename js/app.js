@@ -423,7 +423,7 @@ const createBlogHTML = (post) =>{
 	//Create post Excerpt p
 	const pExcerpt = document.createElement('p');
 	pExcerpt.classList.add('blog-post-excerpt');
-	pExcerpt.innerHTML = getBlogExcerpt(structure[0]);
+	pExcerpt.innerHTML = getBlogExcerpt(structure);
 	//Append title to it's div
 	divBlogDetail.append(pExcerpt);
 
@@ -454,12 +454,44 @@ const getBlogPostDate = (aDate) =>{
 }
 
 const getBlogExcerpt = (struc) =>{
-	let writeUp = struc.content;
+	let firstPara; //Delcare first paragraph
+
+	//Loop to ensure we are getting a para not an article
+	for (let i = 0; i < struc.length; i++) {
+		const element = struc[i];
+		if (element.type == "p") {
+			//Get contents of the element
+			const thisContent = element.content;
+			// use tenary conditional statement to check if array
+			firstPara = getOutPara(thisContent);
+			break;
+		} else if (element.type == "article") {
+			const items = element.content;
+			// console.log(items);
+			for (let k = 0; k < items.length; k++) {
+				const item = items[k];
+				if (item.type == "p") {
+					const thisContent = item.content;
+					// use tenary conditional statement to check if array
+					firstPara = getOutPara(thisContent);
+					// console.log('in it', firstPara);
+					break;
+				}
+			}
+			break;
+		}
+	}
+
 	const syntax = "."
-	// const syntaxPos = writeUp.indexOf(syntax);
-	const excerpt = writeUp.slice(0, 100);
+	const syntaxPos = firstPara.indexOf(syntax);
+	const excerpt = firstPara.slice(0, (syntaxPos + 1));
 	// console.log(excerpt);
 	return excerpt;
+}
+
+const getOutPara = (value) =>{
+	//Get the paragraph by checking if array or not
+	return (Array.isArray(value) ? value[0] : value)
 }
 
 getBlog = () =>{
