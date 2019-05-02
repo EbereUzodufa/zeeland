@@ -231,6 +231,10 @@ p.navItem {
 	width: auto;
 }
 
+.container.property, .container.blog-post, .our-core-principles.container{
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.25);
+}
+
 .container.property, .container.blog-post {
 	margin: 10px auto;
     background-color: #291670;
