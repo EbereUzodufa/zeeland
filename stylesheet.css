@@ -424,6 +424,13 @@ p.signed strong{
     margin: 10px 0px;
 }
 
+i.fas.core-values-icon {
+    color: #BF9F62;
+    font-size: 5em;
+    text-align: center;
+    margin: 20px auto;
+}
+
 .core-values.container p {
     margin: 0px;
 }
