@@ -376,7 +376,7 @@ const createBlogHTML = (post) =>{
 	const {
 		id,
 		title,
-		images,
+		image,
 		publishDate,
 		structure
 	} = post;
@@ -390,7 +390,7 @@ const createBlogHTML = (post) =>{
 	//Create blog post image
 	const img = document.createElement('img');
 	img.classList.add('blog-post-image');
-	img.src = "images/property-test.jpg";
+	img.src = imgBlogFolder + "/" + image;
 	img.alt = "Image of blog post, ";
 	//Append img to divBlogCon
 	divBlogCon.append(img);
