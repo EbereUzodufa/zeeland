@@ -245,9 +245,12 @@ p.navItem {
     grid-template-rows: 300px auto 44px;
 }
 
-.container.blog-post {
+.core-values.container, container.blog-post {
 	width: calc(100% - 20px);
 	max-width: 500px;
+}
+
+.container.blog-post {
     display: grid;
     grid-template-columns: 33% 67%;
     /* grid-template-columns: 100px calc(100% - 100px); just want yu to know this is possible */
