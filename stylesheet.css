@@ -257,7 +257,7 @@ p.navItem {
     display: grid;
     grid-template-columns: 33% 67%;
     /* grid-template-columns: 100px calc(100% - 100px); just want yu to know this is possible */
-    grid-template-rows: 100px 44px;
+    grid-template-rows: auto 44px;
 }
 
 img.property-image, img.blog-post-image {
