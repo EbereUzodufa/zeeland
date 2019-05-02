@@ -71,6 +71,17 @@ h2{
 	text-align: center;
 	color: #291670;
 	margin: 10px auto;
+	display: grid;
+	grid-template-rows: auto;
+}
+
+h2:after {
+    content: "";
+    width: 5em;
+    border-bottom: 2px solid #bf9f62;
+    grid-row-end: 3;
+	font-size: 20px;
+	margin: 2px auto;
 }
 
 h2, h3{
@@ -206,6 +217,10 @@ div.contact.field {
 
 [aria-hidden = "false"]{
 	visibility: visible;
+}
+
+[hidden]{
+	visibility: hidden;
 }
 
 .noScroll{
