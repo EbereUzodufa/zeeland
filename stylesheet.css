@@ -431,13 +431,16 @@ i.fas.core-values-icon {
     margin: 20px auto;
 }
 
+h3.core-value, .core-values.container p {
+	text-align: center;
+}
+
 .core-values.container p {
     margin: 0px;
 }
 
 h3.core-value {
     margin: 0px;
-    text-align: center;
     color: #291670;
 }
 
