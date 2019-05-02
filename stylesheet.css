@@ -251,15 +251,23 @@ p.navItem {
 }
 
 img.property-image, img.blog-post-image {
-    width: 300px;
-    height: 300px;
-    margin: 0px;
-    grid-row-end: 2;
+    grid-row: 1/3;
+    grid-column: 1/2;
+    width: 100%;
+    height: 100%;
 }
 
 a.property-link, a.blog-post-link{
+	margin: 0px;
+	cursor: pointer;
+}
+
+a.property-link{
     grid-row-end: 4;
-    margin: 0px;
+}
+
+a.blog-post-link {
+    grid-column: 1/3;
 }
 
 .containers.details {
