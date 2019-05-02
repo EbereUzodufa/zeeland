@@ -2,8 +2,8 @@
     "blog-posts": [
         {
             "id": 1,
-            "title": "Planting Your Own Money Tree Trough Real Estate",
-            "image":[],
+            "title": "Planting Your Own Money Tree Through Real Estate",
+            "image": "plant-money-financial.jpg",
             "publishDate": "2019-02-25 15:25:08 +01:00",
             "structure": [
                 {
@@ -19,7 +19,7 @@
         {
             "id": 2,
             "title": "Legal Guide to Buying Property in Nigeria",
-            "image":[],
+            "image": "legal-guide.jpg",
             "publishDate": "2019-01-20 17:25:08 +01:00",
             "structure": [
                 {
@@ -147,7 +147,7 @@
         {
             "id": 3,
             "title": "Common Mistake to Avoid Before Purchasing a Land",
-            "image":[],
+            "image":"common-mistakes.jpg",
             "publishDate": "2018-12-19 15:25:08 +01:00",
             "structure": [
                 {
@@ -228,7 +228,7 @@
         {
             "id": 4,
             "title": "Mortgage: How to access NHF Loan From Federal Mortgage Bank of Nigeria",
-            "image":[],
+            "image":"mortgage.jpg",
             "publishDate": "2018-10-02 15:25:08 +01:00",
             "structure": [
                 {
@@ -392,7 +392,7 @@
         {
             "id": 5,
             "title": "Four Documents To Prove Land Ownership",
-            "image":[],
+            "image": "proven-land-ownership.jpg",
             "publishDate": "2018-08-02 15:25:08 +01:00",
             "structure": [
                 {
@@ -476,7 +476,7 @@
         {
             "id": 6,
             "title": "Investing in real estate",
-            "image":[],
+            "image":"investing-in-real-estate.jpg",
             "publishDate": "2018-05-07 15:25:08 +01:00",
             "structure": [
                 {
@@ -554,7 +554,7 @@
         {
             "id": 7,
             "title": "UNDERSTANDING FOUNDATION OF BUILDINGS AND its DIFFERENT TYPES",
-            "image":[],
+            "image":"foundations-of-buildings.jpg",
             "publishDate": "2017-12-31 15:25:08 +01:00",
             "structure": [
                 {
