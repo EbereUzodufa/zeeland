@@ -5,6 +5,7 @@
             "name": "BERRY COURT SAGAMU INTERCHANGE",
             "type": "land",
             "amt": "₦1,200,000",
+            "address": "Sagamu, Ogun state",
             "image": "berry-court-interchange-land-1.jpg"
         },
         {
@@ -12,6 +13,7 @@
             "name": "BRIDGEVILLE COURTS, MAGODO Phase-2",
             "type": "land",
             "amt": "₦25m",
+            "address": "Lagos state",
             "image": "bridgeville-land-2.jpg"
         },
         {
@@ -19,6 +21,7 @@
             "name": "CREEK AVENUE COURT",
             "type": "house",
             "amt": "₦60m",
+            "address": "Ikota Lekki, Lagos state",
             "image": "creek-avenue-court-2.jpg"
         },
         {
@@ -26,6 +29,7 @@
             "name": "DANIEL’S GARDEN",
             "type": "house",
             "amt": "₦65m",
+            "address": "Osapa London, Lekki, Lagos state",
             "image": "daniel-garden-12.jpg"
         },
         {
@@ -33,6 +37,7 @@
             "name": "Eli Court Duplex",
             "type": "house",
             "amt": "₦67m - ₦79m",
+            "address": "Chevron Alternative Drive, Lekki, Lagos State",
             "image": "eli-court-10.jpg"
         }
     ]
