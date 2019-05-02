@@ -232,8 +232,11 @@ p.navItem {
 }
 
 .container.property, .container.blog-post, .our-core-principles.container, .core-values.container{
-	box-shadow: 3px 3px 3px rgba(0,0,0,0.25);
 	margin: 10px auto;
+}
+
+.container.property, .container.blog-post, .our-core-principles.container{
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.25);
 }
 
 .container.property, .container.blog-post {
@@ -245,7 +248,7 @@ p.navItem {
     grid-template-rows: 300px auto 44px;
 }
 
-.core-values.container, container.blog-post {
+.core-values.container, .container.blog-post {
 	width: calc(100% - 20px);
 	max-width: 500px;
 }
@@ -418,10 +421,6 @@ p.signed {
 
 p.signed strong{
 	color: #291670;
-}
-
-.core-values.container {
-    margin: 10px 0px;
 }
 
 i.fas.core-values-icon {
