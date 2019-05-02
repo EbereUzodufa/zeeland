@@ -371,6 +371,17 @@ const generateBlogHTML = () =>{
 	}
 }
 
+const generateFeaturedBlogHTML = () =>{
+	const blogArticle = document.querySelector('article.article-feartured-blog-post');
+	if (blogArticle) {
+		const div = document.createDocumentFragment();
+		for (let i = 0; i < 4; i++) {
+			div.append(createBlogHTML(blog[i]));
+		}
+		blogArticle.append(div);
+	}
+}
+
 //Create Blog HTML
 const createBlogHTML = (post) =>{
 	const {
@@ -498,6 +509,7 @@ getBlog = () =>{
 	fetchBlog();
 	window.addEventListener('load', function() {
 		generateBlogHTML();
+		generateFeaturedBlogHTML();
 	});
 }
 
