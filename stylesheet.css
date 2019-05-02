@@ -262,10 +262,13 @@ a.property-link, a.blog-post-link{
     margin: 0px;
 }
 
-.container.details{
-    grid-row-end: 3;
-    padding-top: 10px;
-    padding-bottom: 10px;
+.containers.details {
+    grid-row: 1/3;
+    grid-column: 2/3;
+	margin: auto;
+	width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 p.property-name, p.property-location,p.property-price, p.property-size, p.blog-post-name, p.blog-post-excerpt, p.blog-post-date {
