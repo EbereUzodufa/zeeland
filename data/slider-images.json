@@ -1,0 +1,39 @@
+{
+    "slider-images":[
+        {
+            "id": 1,
+            "name": "BERRY COURT SAGAMU INTERCHANGE",
+            "type": "land",
+            "amt": "₦1,200,000",
+            "image": "berry-court-interchange-land-1.jpg"
+        },
+        {
+            "id": 2,
+            "name": "BRIDGEVILLE COURTS, MAGODO Phase-2",
+            "type": "land",
+            "amt": "₦25m",
+            "image": "bridgeville-land-2.jpg"
+        },
+        {
+            "id": 3,
+            "name": "CREEK AVENUE COURT",
+            "type": "house",
+            "amt": "₦60m",
+            "image": "creek-avenue-court-2.jpg"
+        },
+        {
+            "id": 4,
+            "name": "DANIEL’S GARDEN",
+            "type": "house",
+            "amt": "₦65m",
+            "image": "daniel-garden-12.jpg"
+        },
+        {
+            "id": 5,
+            "name": "Eli Court Duplex",
+            "type": "house",
+            "amt": "₦67m - ₦79m",
+            "image": "eli-court-10.jpg"
+        }
+    ]
+}
