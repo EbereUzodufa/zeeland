@@ -233,8 +233,8 @@
       "type": "house",
       "address": "Osapa London, Lekki, Lagos state",
       "images": [
-        "daniel-garden-1.jpg",
         "daniel-garden-2.jpg",
+        "daniel-garden-1.jpg",
         "daniel-garden-3.jpg",
         "daniel-garden-4.jpg",
         "daniel-garden-5.jpg",
@@ -313,7 +313,7 @@
       "type": "house",
       "address": "Chevron Alternative Drive, Lekki, Lagos State",
       "images": [
-        "eli-court-1.jpg",
+        "eli-court-10.jpg",
         "eli-court-2.jpg",
         "eli-court-3.jpg",
         "eli-court-4.jpg",
@@ -322,7 +322,7 @@
         "eli-court-7.jpg",
         "eli-court-8.jpg",
         "eli-court-9.jpg",
-        "eli-court-10.jpg",
+        "eli-court-1.jpg",
         "eli-court-11.jpg",
         "eli-court-12.jpg",
         "eli-court-13.jpg",
@@ -393,7 +393,7 @@
       "type": "house",
       "address": "Chevron Alternative Drive, Lekki, Lagos State",
       "images": [
-        "eli-court-1.jpg",
+        "eli-court-13.jpg",
         "eli-court-2.jpg",
         "eli-court-3.jpg",
         "eli-court-4.jpg",
@@ -405,7 +405,7 @@
         "eli-court-10.jpg",
         "eli-court-11.jpg",
         "eli-court-12.jpg",
-        "eli-court-13.jpg",
+        "eli-court-1.jpg",
         "eli-court-14.jpg"
       ],
       "writeUp": [
@@ -534,8 +534,8 @@
       "type": "land",
       "address": "Lagos state",
       "images": [
-        "lexington-garden-land-1.jpg",
         "lexington-garden-land-2.jpg",
+        "lexington-garden-land-1.jpg",
         "lexington-garden-land-3.jpg",
         "lexington-garden-flyer.jpg"
       ],
