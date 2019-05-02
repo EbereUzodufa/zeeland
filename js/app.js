@@ -7,6 +7,10 @@ let properties = []; //Expects an array of property objects
 let socialMedia = []; //Expects an Array of Social media objects
 let blog = []; //Expects an Array of blog objects
 
+//Const Locations
+const imgPropertiesFolder = "images/properties";
+const imgBlogFolder = "images/blog-post";
+
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
