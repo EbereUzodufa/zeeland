@@ -267,8 +267,8 @@ const createPropertyHTML = (property) =>{
 	// image from images. For now we are using demo
 	const imgProperty = document.createElement('img');
 	imgProperty.classList.add('property-image');
-	imgProperty.src = "images/property-test.jpg";
-	imgProperty.alt = "Image of property, ";
+	imgProperty.src = imgPropertiesFolder + "/" + images[0];
+	imgProperty.alt = "Image of " + name;
 
 	//Append image (imgProperty) to divConProperty
 	divConProperty.append(imgProperty);
