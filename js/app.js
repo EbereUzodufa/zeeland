@@ -6,6 +6,7 @@ const overlay = document.querySelector('div.overlay');
 let properties = []; //Expects an array of property objects
 let socialMedia = []; //Expects an Array of Social media objects
 let blog = []; //Expects an Array of blog objects
+let slider = []; //Expects an Array of slider objects
 
 //Const Locations
 const imgPropertiesFolder = "images/properties";
