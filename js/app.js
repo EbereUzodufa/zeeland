@@ -12,8 +12,10 @@ let slider = []; //Expects an Array of slider objects
 const imgPropertiesFolder = "images/properties";
 const imgBlogFolder = "images/blog-post";
 
-const slideSecDuration = 2; //Number of seconds before image changes;
+const slideSecDuration = 6; //Number of seconds before image changes;
 const slideDur = slideSecDuration * 1000; //Number of milliseconds before image changes
+let slideIndex = 0;
+let timeId; //I use this to control timer on slider
 
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
@@ -120,6 +122,7 @@ const generateSliderHTML = () =>{
 			div.append(createSliderHTML(slide));
 		});
 		sliderDiv.append(div);
+		activateSlider();
 	}
 }
 
@@ -192,6 +195,49 @@ getSlide = () =>{
 	window.addEventListener('load', function() {
 		generateSliderHTML();
 	});
+}
+
+//Let the slider begin
+const activateSlider = () =>{
+	let i;
+	let slides = document.querySelectorAll("div.container.slide.fade");
+	for (i = 0; i < slides.length; i++) {
+		slides[i].style.display = "none";  
+	}
+	slideIndex++;
+	if (slideIndex > slides.length) {slideIndex = 1}
+  	if (slideIndex < 1) {slideIndex = slides.length}    
+	
+	console.log(slideIndex);
+	slides[slideIndex-1].style.display = "grid";  
+	startSliderTimeOut();
+}
+
+const startSliderTimeOut = () =>{
+	timeId = 	window.setTimeout(activateSlider, slideDur); // Change image every slideDur seconds
+}
+
+const endSliderTimeOut = () =>{
+	window.clearTimeout(timeId);
+}
+
+//Show previous and next slide
+const navSlider = () => {
+	const nextBtn = document.querySelector('a.slide-nav.right');
+	const prevBtn = document.querySelector('a.slide-nav.left');
+
+	nextBtn.addEventListener('click', function(){
+		slideIndex += 0;
+		endSliderTimeOut();
+		activateSlider();
+	});
+
+	prevBtn.addEventListener('click', function(){
+		slideIndex += -2;
+		endSliderTimeOut();
+		activateSlider();
+	});
+
 }
 
 //Fecth JSON for social Media Icons
@@ -612,6 +658,7 @@ const startApp = () => {
 	getProperties();
 	getBlog();
 	getSlide();
+	navSlider();
 };
 
 startApp();
