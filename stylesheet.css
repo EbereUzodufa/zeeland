@@ -291,7 +291,6 @@ div.slide-nav-container{
 	width: 100%;
 	height: 100%;
 	grid-row: 2/3;
-	z-index: 1;
 }
 
 a.slide-nav:hover {
