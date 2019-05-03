@@ -60,8 +60,24 @@ const toggleMenuBtn = () =>{
 			iAwesome.style.color = '#291670';
 			giveOverlay = false;
 		}
+		setZnav();
 		setOverlay(giveOverlay);
 	});
+}
+
+//Handles/toggle navigation arrow keys z-index
+const setZnav = () =>{
+	const zNav = document.querySelectorAll('div.slide-nav-container');
+	if(zNav){
+		for (let index = 0; index < zNav.length; index++) {
+			const element = zNav[index];
+			if(element.style.zIndex == 1){
+				element.style.zIndex = 0;
+			} else{
+				element.style.zIndex = 1;
+			}
+		}
+	}
 }
 
 //Change ARIA based on screen width
