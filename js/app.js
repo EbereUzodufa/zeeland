@@ -127,14 +127,12 @@ const generateSliderHTML = () =>{
 }
 
 const createSliderHTML = (slide) =>{
-	const {
-		id,
-		name,
-		type,
-		amt,
-		address,
-		image
-	} = slide;
+	const id = slide.id;
+	const name = slide.name;
+	const type = slide.type;
+	const amt = slide.amt;
+	const address = slide.address;
+	const image = slide.image;
 
 	const divCSF = document.createElement('div'); //div with class container slide fade, the grand parent div
 	divCSF.classList.add('container', 'slide', 'fade');
@@ -259,12 +257,10 @@ const generateSocialMediaHTML = () =>{
 
 //Create HTML for social media
 const createSocialMediaHTML = (socialMedia) =>{
-	const {
-		id,
-		name,
-		title,
-		link
-	} = socialMedia;
+	const id = socialMedia.id;
+	const name = socialMedia.name;
+	const title = socialMedia.title;
+	const link = socialMedia;
 
 	const divConSocialMedia = document.createElement('div');
 	divConSocialMedia.classList.add('social-media');
@@ -358,23 +354,21 @@ const generateFeaturedPropertyHTML = () =>{
 
 //Create HTML for Property
 const createPropertyHTML = (property) =>{
-	const {
-		id,
-		name,
-		type,
-		address,
-		images,
-		writeUp,
-		bottomWriteUp,
-		price,
-		propertySize,
-		propertyTitle,
-		propertyOfferType,
-		propertyNeighborhood,
-		propertyFeatures,
-		map,
-		videoLink
-	} = property;
+	const id = property.id;
+	const name = property.name;
+	const type = property.type;
+	const address = property.address;
+	const images = property.images;
+	const writeUp = property.writeUp;
+	const bottomWriteUp = property.bottomWriteUp;
+	const price = property.price;
+	const propertySize = property.propertySize;
+	const propertyTitle = property.propertyTitle;
+	const propertyOfferType = property.propertyOfferType;
+	const propertyNeighborhood = property.propertyNeighborhood;
+	const propertyFeatures = property.propertyFeatures;
+	const map = property.map;
+	const videoLink = property.videoLink;
 
 	// console.log(id,id);
 	// console.log(id,name);
@@ -521,13 +515,11 @@ const generateFeaturedBlogHTML = () =>{
 
 //Create Blog HTML
 const createBlogHTML = (post) =>{
-	const {
-		id,
-		title,
-		image,
-		publishDate,
-		structure
-	} = post;
+	const id = post.id;
+	const title = post.title;
+	const image = post.image;
+	const publishDate = post.publishDate;
+	const structure = post.structure;
 
 	// console.log(id, post);
 	
