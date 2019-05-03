@@ -104,6 +104,93 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 	  });
 }
 
+//Fetch JSON for slider
+const fetchSlider = () =>{
+	fetchJSONFromFile(slider, './data/slider-images.json');
+} 
+
+const generateSliderHTML = () =>{
+	const sliderDiv = document.querySelector('div.homepage.slider.image');
+	if (sliderDiv) {
+		const div = document.createDocumentFragment();
+		slider.forEach(slide =>{
+			div.append(createSliderHTML(slide));
+		});
+		sliderDiv.append(div);
+	}
+}
+
+const createSliderHTML = (slide) =>{
+	const {
+		id,
+		name,
+		type,
+		amt,
+		address,
+		image
+	} = slide;
+
+	const divCSF = document.createElement('div'); //div with class container slide fade, the grand parent div
+	divCSF.classList.add('container', 'slide', 'fade');
+
+	const img = document.createElement('img'); //create slide image
+	img.src = imgPropertiesFolder + "/" + image;
+	img.alt = "image of property, " + name;
+	img.classList.add('slide-img');
+	//Append img to divCSF
+	divCSF.append(img);
+	
+	const divSD = document.createElement('div'); //div with class container slide-detail
+	divSD.classList.add('slide-detail');
+
+	const pSlidName = document.createElement('p'); //paragraph for slide name
+	pSlidName.classList.add("slide-name");
+	pSlidName.innerHTML = name;
+	//Append pSlideName to divSD
+	divSD.append(pSlidName);
+
+	const divLoc = document.createElement('div'); //Create the div for location
+	divLoc.classList.add('container');
+
+	const iLoc = document.createElement('i');//create fontawesome icon for location
+	iLoc.classList.add('fas', 'fa-map-marker-alt', 'prop-loc');
+	divLoc.append(iLoc);
+
+	const pSlidLoc = document.createElement('p'); //paragraph for slide city/address
+	pSlidLoc.classList.add("slide-city");
+	pSlidLoc.innerHTML = address;
+	//Append pSlideName to divSD
+	divLoc.append(pSlidLoc);
+
+	//Append divLoc to divSD
+	divSD.append(divLoc);
+
+	const divAmt = document.createElement('div'); //Create the div for property amt
+	divAmt.classList.add('container', 'slide-amt-container');
+
+	const pSlidAmt = document.createElement('p'); //paragraph for slide property amount
+	pSlidAmt.classList.add("slide-amt");
+	pSlidAmt.innerHTML = amt;
+	//Append pSlideAmt to divAmt
+	divAmt.append(pSlidAmt);
+
+	//Append divAmt to divSD
+	divSD.append(divAmt);
+
+	//Append divSD to divCSF
+	divCSF.append(divSD);
+
+	return divCSF;
+}
+
+//Lets make us our slider
+getSlide = () =>{
+	fetchSlider();
+	window.addEventListener('load', function() {
+		generateSliderHTML();
+	});
+}
+
 //Fecth JSON for social Media Icons
 const fetchSocialMedia = () =>{
 	fetchJSONFromFile(socialMedia, './data/socialMediaLinks.json');
@@ -521,6 +608,7 @@ const startApp = () => {
 	getSocialMedia();
 	getProperties();
 	getBlog();
+	getSlide();
 };
 
 startApp();
