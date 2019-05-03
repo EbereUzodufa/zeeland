@@ -12,6 +12,9 @@ let slider = []; //Expects an Array of slider objects
 const imgPropertiesFolder = "images/properties";
 const imgBlogFolder = "images/blog-post";
 
+const slideSecDuration = 2; //Number of seconds before image changes;
+const slideDur = slideSecDuration * 1000; //Number of milliseconds before image changes
+
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
