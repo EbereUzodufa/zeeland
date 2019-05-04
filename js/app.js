@@ -143,9 +143,7 @@ const generateSliderHTML = () =>{
 }
 
 const createSliderHTML = (slide) =>{
-	const id = slide.id;
 	const name = slide.name;
-	const type = slide.type;
 	const amt = slide.amt;
 	const address = slide.address;
 	const image = slide.image;
@@ -273,8 +271,6 @@ const generateSocialMediaHTML = () =>{
 
 //Create HTML for social media
 const createSocialMediaHTML = (socialMedia) =>{
-	const id = socialMedia.id;
-	const name = socialMedia.name;
 	const title = socialMedia.title;
 	const link = socialMedia;
 
@@ -372,19 +368,10 @@ const generateFeaturedPropertyHTML = () =>{
 const createPropertyHTML = (property) =>{
 	const id = property.id;
 	const name = property.name;
-	const type = property.type;
 	const address = property.address;
 	const images = property.images;
-	const writeUp = property.writeUp;
-	const bottomWriteUp = property.bottomWriteUp;
 	const price = property.price;
 	const propertySize = property.propertySize;
-	const propertyTitle = property.propertyTitle;
-	const propertyOfferType = property.propertyOfferType;
-	const propertyNeighborhood = property.propertyNeighborhood;
-	const propertyFeatures = property.propertyFeatures;
-	const map = property.map;
-	const videoLink = property.videoLink;
 
 	// console.log(id,id);
 	// console.log(id,name);
