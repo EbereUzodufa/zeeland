@@ -658,6 +658,14 @@ getBlog = () =>{
 	});
 }
 
+//This area has functions that help display the individual properties
+
+//Create property URL
+const propertyURL = (id) =>{
+	return (`./property.html?id=${id}`);
+}
+
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
