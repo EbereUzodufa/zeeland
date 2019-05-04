@@ -485,6 +485,7 @@ const createPropertyHTML = (property) =>{
 	aLink.role = "button";
 	aLink.classList.add('property-link');
 	aLink.innerHTML = "Click here to get Details";
+	aLink.href = propertyURL(id);
 	//Append aLink to divConProperty
 	divConProperty.append(aLink);
 
