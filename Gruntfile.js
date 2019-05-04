@@ -1,23 +1,19 @@
-grunt.initConfig({
+module.exports = function(grunt) {
+  grunt.initConfig({
     responsive_images: {
       dev: {
-        options: {},
+        options: {
+          engine: 'im'
+        },
         sizes: [{
-          width: 320,
-          height: 240
-        },{
-          name: 'large',
-          width: 640
-        },{
-          name: "large",
-          width: 1024,
-          suffix: "_x2",
-          quality: 0.6
+          width: 480,
+          suffix: '_small',
+          quality: 90
         }],
         files: [{
           expand: true,
-          src: ['app/img/**/*.{jpg,gif,png}'],
-          cwd: 'images/',
+          src: ['*.{gif,jpg,png,jpeg}'],
+          cwd: 'images/properties/',
           dest: 'imgSrc/'
         }]
       }
@@ -41,9 +37,9 @@ grunt.initConfig({
       dev: {
         files: [{
           expand: true,
-          src: ['**/*', '!app/img/**/*.*'],
-          cwd: 'images/',
-          dest: 'imgSrc/'
+          src: ['images/fixed/*.{gif,jpg,png}'],
+          dest: 'imgSrc/',
+          flatten: true,
         }]
       }
     }
@@ -55,3 +51,4 @@ grunt.initConfig({
   grunt.loadNpmTasks('grunt-mkdir');
   
   grunt.registerTask('default', ['clean', 'mkdir', 'copy', 'responsive_images']);
+}
