@@ -17,6 +17,10 @@ const slideDur = slideSecDuration * 1000; //Number of milliseconds before image 
 let slideIndex = 0;
 let timeId; //I use this to control timer on slider
 
+//Individual URL for blog and property
+const propertyURL = "./property.html";
+const blogURL = "./blog.html";
+
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
@@ -476,7 +480,7 @@ const createPropertyHTML = (property) =>{
 	aLink.role = "button";
 	aLink.classList.add('property-link');
 	aLink.innerHTML = "Click here to get Details";
-	aLink.href = propertyURL(id);
+	aLink.href = createItemURL(propertyURL,id);
 	//Append aLink to divConProperty
 	divConProperty.append(aLink);
 
@@ -580,6 +584,7 @@ const createBlogHTML = (post) =>{
 
 	const aBlog  = document.createElement('a');
 	aBlog.role = "button";
+	aLink.href = createItemURL(blogURL,id);
 	aBlog.classList.add('blog-post-link');
 	aBlog.innerHTML = "Click here to Read more";
 	//Append aBlog to divBlogCon
@@ -653,8 +658,9 @@ getBlog = () =>{
 //This area has functions that help display the individual properties
 
 //Create property URL
-const propertyURL = (id) =>{
+const createItemURL = (itemURL, id) =>{
 	return (`./property.html?id=${id}`);
+	return (itemURL + '?id=' + id);
 }
 
 //Show clicked Property
@@ -663,7 +669,7 @@ const displayProperty = () => {
 	if(id) {
 		properties.map(prop =>{
 			if (prop.id == id) {
-				document.title = prop.name +' | Zeeland Homes Property';
+				document.title = prop.name +' | Zeeland Homes Limited, the most valuable real estate deals under the safest terms';
 				selectedPropertyHTML(prop);
 				// return console.log(prop);
 			}
