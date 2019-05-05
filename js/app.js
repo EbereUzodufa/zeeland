@@ -20,7 +20,7 @@ let timeId; //I use this to control timer on slider
 //Individual URL for blog and property
 const propertyURL = "./property.html";
 const blogURL = "./blog-post.html";
-
+// const logoURL = "images/logo.png";
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
@@ -705,7 +705,6 @@ const selectedPropertyHTML = (property) =>{
 	const propertyOfferType = property.propertyOfferType;
 	const propertyNeighborhood = property.propertyNeighborhood;
 	const propertyFeatures = property.propertyFeatures;
-	const map = property.map;
 
 	//if there is property name
 	if(name){
@@ -717,7 +716,7 @@ const selectedPropertyHTML = (property) =>{
 		//APpend h1 to div
 		divH1.append(h1);
 
-		//the Section 
+		//the Section for title
 		const sec = document.querySelector('section.property-title-header');
 
 		if(sec){
@@ -731,6 +730,636 @@ const selectedPropertyHTML = (property) =>{
 		}
 	}
 
+	//Create price if we have a price
+	if (price) {
+		const articlePrice = document.querySelector('article.property-price');
+
+		//Segment the different types of prices
+		const mainPrice = price.mainPrice;
+		const otherPrices = price.otherPrices;
+
+		//Check main price
+		if (mainPrice) {
+			const pMainPrice = document.createElement('p');
+			pMainPrice.classList.add("property-mainPrice");
+			pMainPrice.innerHTML = mainPrice;
+
+			//Create div for main price
+			const div = document.createElement('div');
+			div.classList.add("container");
+
+			//Append mainPrice to div
+			div.append(pMainPrice);
+
+			//Append div to article
+			articlePrice.append(div);
+		}
+
+		if(otherPrices){
+			//Create div for other prices
+			const divPropertyOtherPrices = document.createElement('div');
+			divPropertyOtherPrices.classList.add("container");
+
+			if(Array.isArray(otherPrices)){
+				if(otherPrices.length != 0){
+					const fragPropPrices = document.createDocumentFragment();
+					otherPrices.forEach(otherPrice =>{
+						//list for property Prices(s)
+						const liPPrices = document.createElement('li');
+						liPPrices.classList.add("property-prices-list-item");
+						liPPrices.innerHTML = otherPrice;
+
+						//Append the li to fragment
+						fragPropPrices.append(liPPrices);
+					});
+
+					//Append the fragment to ul
+					const ulPPrices = document.createElement('ul');
+					ulPPrices.classList.add("property-prices-list", "property-characteristic");
+					ulPPrices.innerHTML = "Other Prices";
+					
+					//Append fragment to ul
+					ulPPrices.append(fragPropPrices);
+
+					//Append ul ie list to div
+					divPropertyOtherPrices.append(ulPPrices);
+				}
+			} else{
+				//Paragraph for otjer prices
+				const pOtherPrice = document.createElement('p');
+				pOtherPrice.classList.add("property-characteristic");
+				pOtherPrice.innerHTML = "Other Price <span>" +  otherPrices + "</span>";
+
+				//Append pOtherPrice ie list to div
+				divPropertyOtherPrices.append(pOtherPrice)
+			}
+			//Append divPropertyOtherPrices to article
+			articlePrice.append(divPropertyOtherPrices);
+		}
+	}
+
+	//Get article for prperty contents
+	const articleProp = document.querySelector("article.property-content");
+
+	//if we find this article
+	if (articleProp) {
+		const frag = document.createDocumentFragment();
+
+		//I refer to the main features as characteristic(s)
+
+		//So I create a div to wrap all of them
+		const divXterisitics = document.createElement('div');
+		divXterisitics.classList.add("container", "property-characteristics");
+
+		if(type){
+			//div for Type
+			const divType = document.createElement("div");
+			divType.classList.add("property-type-container","property-characteristic-container");
+
+			//Paragraph for Type
+			const pType = document.createElement('p');
+			pType.classList.add("property-type","property-characteristic");
+			pType.innerHTML = "Type: <span>" + type + "</span>";
+
+			//Append the Type to div
+			divType.append(pType);
+
+			//Append div to divXteristics
+			divXterisitics.append(divType);
+		}
+
+		if(address){
+			//div for Address
+			const divAddress = document.createElement("div");
+			divAddress.classList.add("property-address-container","property-characteristic-container");
+
+			//Paragraph for Address
+			const pAddress = document.createElement('p');
+			pAddress.classList.add("property-address","property-characteristic");
+			pAddress.innerHTML = "Location: <span>" + address + "</span>";
+
+			//Append the Address to div
+			divAddress.append(pAddress);
+
+			//Append div to divXteristics
+			divXterisitics.append(divAddress);
+		}
+
+		if(propertySize){
+			//div for propertySize
+			const divPropertySize = document.createElement("div");
+			divPropertySize.classList.add("property-propertySize-container","property-characteristic-container");
+
+			//Paragraph for propertySize
+			const pPropertySize = document.createElement('p');
+			pPropertySize.classList.add("property-propertySize","property-characteristic");
+			pPropertySize.innerHTML = "property size: <span>" + propertySize + "</span>";
+
+			//Append the propertySize to div
+			divPropertySize.append(pPropertySize);
+
+			//Append div to divXteristics
+			divXterisitics.append(divPropertySize);
+		}
+
+		if (propertyTitle) {
+			//div for propertyTitle
+			const divPropertyTitle = document.createElement("div");
+			divPropertyTitle.classList.add("property-propertyTitle-container","property-characteristic-container", "container");
+
+			if (Array.isArray(propertyTitle)) {
+				if(propertyTitle.length != 0){	
+					const fragPropTitle = document.createDocumentFragment();
+					propertyTitle.forEach(pT =>{
+						//list for property title(s)
+						const liPTitle = document.createElement('li');
+						liPTitle.classList.add("property-title-list-item");
+						liPTitle.innerHTML = pT;
+
+						//Append the li to fragment
+						fragPropTitle.append(liPTitle);
+					});
+
+					//Append the fragment to ul
+					const ulPTitle = document.createElement('ul');
+					ulPTitle.classList.add("property-title-list", "property-characteristic", "container");
+					ulPTitle.innerHTML = "Property Title";
+					
+					//Append fragment to ul
+					ulPTitle.append(fragPropTitle);
+
+					//Append ul ie list to div
+					divPropertyTitle.append(ulPTitle);
+				}
+			} else{
+				//Paragraph for Title
+				const pPropertyTitle = document.createElement('p');
+				pPropertyTitle.classList.add("property-characteristic");
+				pPropertyTitle.innerHTML = "Property Title <span>" +  propertyTitle + "</span>";
+
+				//Append the PropertyTitle to div
+				divPropertyTitle.append(pPropertyTitle);
+			}
+
+			//Append div to divXteristics
+			divXterisitics.append(divPropertyTitle);
+		}
+
+		//Append the major features to frag
+		frag.append(divXterisitics);
+
+		//Features of the property
+		if(propertyFeatures){
+			//div for Features
+			const divPropertyFeatures = document.createElement("div");
+			divPropertyFeatures.classList.add("property-propertyFeatures-container", "container");
+
+			//Check if propertyFeatures is an array
+			if (Array.isArray(propertyFeatures)) {
+				if(propertyFeatures.length != 0){	
+					const fragPropFeatures = document.createDocumentFragment();
+					propertyFeatures.forEach(feat =>{
+						//list for property title(s)
+						const liFeat = document.createElement('li');
+						liFeat.classList.add("property-feature-list-item");
+						liFeat.innerHTML = feat;
+
+						//Append the li to fragment
+						fragPropFeatures.append(liFeat);
+					});
+
+					//Append the fragment to ul
+					const ulFeat = document.createElement('ul');
+					ulFeat.classList.add("property-feature-list", "container");
+					ulFeat.innerHTML = "Property Features and Facilities";
+					
+					//Append fragment to ul
+					ulFeat.append(fragPropFeatures);
+
+					//Append ul ie list to div
+					divPropertyFeatures.append(ulFeat);
+				}
+			} else{
+				//Paragraph for propertyFeatures
+				const pPropertyFeatures = document.createElement('p');
+				pPropertyFeatures.classList.add("property-propertyFeatures");
+				pPropertyFeatures.innerHTML = "Property Feature and Facility <span>" + propertyFeatures + "</span>";
+
+				//Append the propertyFeatures to div
+				divPropertyFeatures.append(pPropertyFeatures);
+			}
+
+			//Append div to fragment
+			frag.append(divPropertyFeatures);
+		}
+
+		//Write up about property
+		if(writeUp){
+			//div for writeUp
+			const divWriteUp = document.createElement("div");
+			divWriteUp.classList.add("property-writeUp-container", "container");
+
+			//Check if writeUp is an array
+			if (Array.isArray(writeUp)) {
+				if(writeUp.length != 0){	
+					const fragWriteUp = document.createDocumentFragment();
+					writeUp.forEach(w =>{
+						//Paragraph for WriteUp
+						const pWriteUp = document.createElement('p');
+						pWriteUp.classList.add("property-writeUp");
+						pWriteUp.innerHTML = w;
+
+						//Append the p to fragment
+						fragWriteUp.append(pWriteUp);
+					});
+
+					//Append the fragment to div
+					divWriteUp.append(fragWriteUp);
+				}
+			} else{
+				//Paragraph for WriteUp
+				const pWriteUp = document.createElement('p');
+				pWriteUp.classList.add("property-writeUp");
+				pWriteUp.innerHTML = writeUp;
+
+				//Append the WriteUp to div
+				divWriteUp.append(pWriteUp);
+			}
+
+			//Append div to fragment
+			frag.append(divWriteUp);
+		}
+
+		//Property Neighborhood
+		if(propertyNeighborhood){
+			//div for Features
+			const divPropertyNeighborhood = document.createElement("div");
+			divPropertyNeighborhood.classList.add("property-propertyNeighborhood-container", "container");
+
+			//Check if propertyNeighborhood is an array
+			if (Array.isArray(propertyNeighborhood)) {
+				if(propertyNeighborhood.length != 0){	
+					const fragPropNeighborhood = document.createDocumentFragment();
+					propertyNeighborhood.forEach(neighborhood =>{
+						//list for property Neighborhood(s)
+						const liNeighborhood = document.createElement('li');
+						liNeighborhood.classList.add("property-neighborhood-list-item");
+						liNeighborhood.innerHTML = neighborhood;
+
+						//Append the li to fragment
+						fragPropNeighborhood.append(liNeighborhood);
+					});
+
+					//Append the fragment to ul
+					const ulNeighborhood = document.createElement('ul');
+					ulNeighborhood.classList.add("property-Neighborhood-list", "container");
+					ulNeighborhood.innerHTML = "Property Neighborhoods";
+					
+					//Append fragment to ul
+					ulNeighborhood.append(fragPropNeighborhood);
+
+					//Append ul ie list to div
+					divPropertyNeighborhood.append(ulNeighborhood);
+				}
+			} else{
+				//Paragraph for propertyNeighborhood
+				const ppropertyNeighborhood = document.createElement('p');
+				ppropertyNeighborhood.classList.add("property-propertyNeighborhood");
+				ppropertyNeighborhood.innerHTML = "Property Neighborhood <span>" + propertyNeighborhood + "</span>";
+
+				//Append the propertyNeighborhood to div
+				divPropertyNeighborhood.append(ppropertyNeighborhood);
+			}
+
+			//Append div to fragment
+			frag.append(divPropertyNeighborhood);
+		}
+
+		//bottom write up about property
+		if(bottomWriteUp){
+			//div for bottomWriteUp
+			const divBottomWriteUp = document.createElement("div");
+			divBottomWriteUp.classList.add("property-bottomWriteUp-container", "container");
+
+			//Check if bottomWriteUp is an array
+			if (Array.isArray(bottomWriteUp)) {
+				if(bottomWriteUp.length != 0){	
+					const fragBottomWriteUp = document.createDocumentFragment();
+					bottomWriteUp.forEach(w =>{
+						//Paragraph for bottomWriteUp
+						const pBottomWriteUp = document.createElement('p');
+						pBottomWriteUp.classList.add("property-bottomWriteUp");
+						pBottomWriteUp.innerHTML = w;
+
+						//Append the p to fragment
+						fragBottomWriteUp.append(pBottomWriteUp);
+					});
+
+					//Append the fragment to div
+					divBottomWriteUp.append(fragBottomWriteUp);
+				}
+			} else{
+				//Paragraph for bottomWriteUp
+				const pBottomWriteUp = document.createElement('p');
+				pBottomWriteUp.classList.add("property-bottomWriteUp");
+				pBottomWriteUp.innerHTML = bottomWriteUp;
+
+				//Append the bottomWriteUp to div
+				divBottomWriteUp.append(pBottomWriteUp);
+			}
+
+			//Append div to fragment
+			frag.append(divBottomWriteUp);
+		}
+		
+		articleProp.append(frag);
+	}
+}
+
+function initMap() {
+	// The location of Uluru
+	const id = getItemId();
+
+	if(id){
+		let property;
+		let mapLoc
+		properties.map(prop =>{
+			if (prop.id == id) {
+				property = prop;
+				mapLoc = property.map;
+			}
+		});
+
+		// //Get section for map
+		const divMap = document.querySelector("div#map");
+
+		if (divMap) {
+			// The map, centered at property
+			const mapCenter = new google.maps.LatLng(parseFloat(mapLoc.lat),parseFloat(mapLoc.lng));
+			// const mapCenter = [mapLoc.lat, mapLoc.lng]
+			console.log("lan",mapCenter);
+			const map = new google.maps.Map(
+				document.getElementById('map'), {
+					zoom: 12,
+					center: mapCenter,
+					mapTypeControl: true,
+					mapTypeControlOptions: {
+					  style:google.maps.MapTypeControlStyle.VERTICAL_BAR,
+					  position: google.maps.ControlPosition.BOTTOM_CENTER,
+					},
+					panControl: true,
+					panControlOptions: {
+					  position: google.maps.ControlPosition.TOP_LEFT,
+					},
+					zoomControl: true,
+					zoomControlOptions: {
+					  style: google.maps.ZoomControlStyle.LARGE,
+					  position: google.maps.ControlPosition.LEFT_CENTER,
+					},
+					scaleConrol: true,
+					scaleControlOptions:{
+					  position: google.maps.ControlPosition.TOP_LEFT ,
+					},
+					style: [
+						{
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#ebe3cd"
+							}
+						  ]
+						},
+						{
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#523735"
+							}
+						  ]
+						},
+						{
+						  "elementType": "labels.text.stroke",
+						  "stylers": [
+							{
+							  "color": "#f5f1e6"
+							}
+						  ]
+						},
+						{
+						  "featureType": "administrative",
+						  "elementType": "geometry.stroke",
+						  "stylers": [
+							{
+							  "color": "#c9b2a6"
+							}
+						  ]
+						},
+						{
+						  "featureType": "administrative.land_parcel",
+						  "elementType": "geometry.stroke",
+						  "stylers": [
+							{
+							  "color": "#dcd2be"
+							}
+						  ]
+						},
+						{
+						  "featureType": "administrative.land_parcel",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#ae9e90"
+							}
+						  ]
+						},
+						{
+						  "featureType": "landscape.natural",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#dfd2ae"
+							}
+						  ]
+						},
+						{
+						  "featureType": "poi",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#dfd2ae"
+							}
+						  ]
+						},
+						{
+						  "featureType": "poi",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#93817c"
+							}
+						  ]
+						},
+						{
+						  "featureType": "poi.park",
+						  "elementType": "geometry.fill",
+						  "stylers": [
+							{
+							  "color": "#a5b076"
+							}
+						  ]
+						},
+						{
+						  "featureType": "poi.park",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#447530"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#f5f1e6"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.arterial",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#fdfcf8"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.highway",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#f8c967"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.highway",
+						  "elementType": "geometry.stroke",
+						  "stylers": [
+							{
+							  "color": "#e9bc62"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.highway.controlled_access",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#e98d58"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.highway.controlled_access",
+						  "elementType": "geometry.stroke",
+						  "stylers": [
+							{
+							  "color": "#db8555"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.local",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#806b63"
+							}
+						  ]
+						},
+						{
+						  "featureType": "transit.line",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#dfd2ae"
+							}
+						  ]
+						},
+						{
+						  "featureType": "transit.line",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#8f7d77"
+							}
+						  ]
+						},
+						{
+						  "featureType": "transit.line",
+						  "elementType": "labels.text.stroke",
+						  "stylers": [
+							{
+							  "color": "#ebe3cd"
+							}
+						  ]
+						},
+						{
+						  "featureType": "transit.station",
+						  "elementType": "geometry",
+						  "stylers": [
+							{
+							  "color": "#dfd2ae"
+							}
+						  ]
+						},
+						{
+						  "featureType": "water",
+						  "elementType": "geometry.fill",
+						  "stylers": [
+							{
+							  "color": "#b9d3c2"
+							}
+						  ]
+						},
+						{
+						  "featureType": "water",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#92998d"
+							}
+						  ]
+						}
+					]
+				}
+			);
+
+			console.log("the map", map)
+			
+			// var markerIcon = new google.maps.MarkerImage(logoURL,
+			// 	// This marker is 20 pixels wide by 32 pixels tall.
+			// 	new google.maps.Size(25, 25),
+			// 	// The origin for this image is 0,0.
+			// 	new google.maps.Point(0,0),
+			// 	// The anchor for this image is the base of the flagpole at 0,32.
+			// 	new google.maps.Point(0, 32)
+			// );
+
+			// The marker, positioned at property
+			var marker = new google.maps.Marker({
+				position: mapCenter, 
+				map: map,
+				// icon : markerIcon
+			});
+
+			divMap.style.height = "500px";
+		}
+
+	}
 }
 
 // On application start, perform these
