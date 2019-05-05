@@ -19,7 +19,7 @@ let timeId; //I use this to control timer on slider
 
 //Individual URL for blog and property
 const propertyURL = "./property.html";
-const blogURL = "./blog.html";
+const blogURL = "./blog-post.html";
 
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
@@ -224,7 +224,7 @@ const activateSlider = () =>{
 	if (slideIndex > slides.length) {slideIndex = 1}
   	if (slideIndex < 1) {slideIndex = slides.length}    
 	
-	console.log(slideIndex);
+	// console.log(slideIndex);
 	slides[slideIndex-1].style.display = "grid";  
 	startSliderTimeOut();
 }
@@ -584,7 +584,7 @@ const createBlogHTML = (post) =>{
 
 	const aBlog  = document.createElement('a');
 	aBlog.role = "button";
-	aLink.href = createItemURL(blogURL,id);
+	aBlog.href = createItemURL(blogURL,id);
 	aBlog.classList.add('blog-post-link');
 	aBlog.innerHTML = "Click here to Read more";
 	//Append aBlog to divBlogCon
@@ -690,6 +690,47 @@ const displayProperty = () => {
 		});
 	}
 	// console.log(id);
+}
+
+const selectedPropertyHTML = (property) =>{
+	const name = property.name;
+	const type = property.type;
+	const address = property.address;
+	const images = property.images;
+	const writeUp = property.writeUp;
+	const bottomWriteUp = property.bottomWriteUp;
+	const price = property.price;
+	const propertySize = property.propertySize;
+	const propertyTitle = property.propertyTitle;
+	const propertyOfferType = property.propertyOfferType;
+	const propertyNeighborhood = property.propertyNeighborhood;
+	const propertyFeatures = property.propertyFeatures;
+	const map = property.map;
+
+	//if there is property name
+	if(name){
+		const divH1 = document.createElement('div');//h1 div
+		divH1.classList.add("title-wrap", "container");
+
+		const h1 = document.createElement('h1');
+		h1.innerHTML = name;
+		//APpend h1 to div
+		divH1.append(h1);
+
+		//the Section 
+		const sec = document.querySelector('section.property-title-header');
+
+		if(sec){
+			//Append h1 div
+			sec.append(divH1);
+		}
+
+		const span = document.querySelector('span#property-name');
+		if(span){
+			span.innerHTML = name;	
+		}
+	}
+
 }
 
 // On application start, perform these
