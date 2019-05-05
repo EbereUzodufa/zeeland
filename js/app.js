@@ -664,7 +664,7 @@ const createItemURL = (itemURL, id) =>{
 
 //Show clicked Property
 const displayProperty = () => {
-	const id = getPropertyId();
+	const id = getItemId();
 	if(id) {
 		properties.map(prop =>{
 			if (prop.id == id) {
@@ -678,7 +678,7 @@ const displayProperty = () => {
 }
 
 //Get this Property from this ID
-getPropertyId = (url) => {
+getItemId = (url) => {
 	let id = 'id';
 	if (!url)
 	  url = window.location.href;
