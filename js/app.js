@@ -662,6 +662,21 @@ const createItemURL = (itemURL, id) =>{
 	return (itemURL + '?id=' + id);
 }
 
+//Get this Item ID from URL
+getItemId = (url) => {
+	let id = 'id';
+	if (!url)
+	  url = window.location.href;
+	id = id.replace(/[\[\]]/g, '\\$&');
+	const regex = new RegExp(`[?&]${id}(=([^&#]*)|&|#|$)`),
+	  results = regex.exec(url);
+	if (!results)
+	  return null;
+	if (!results[2])
+	  return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+
 //Show clicked Property
 const displayProperty = () => {
 	const id = getItemId();
@@ -675,21 +690,6 @@ const displayProperty = () => {
 		});
 	}
 	// console.log(id);
-}
-
-//Get this Property from this ID
-getItemId = (url) => {
-	let id = 'id';
-	if (!url)
-	  url = window.location.href;
-	id = id.replace(/[\[\]]/g, '\\$&');
-	const regex = new RegExp(`[?&]${id}(=([^&#]*)|&|#|$)`),
-	  results = regex.exec(url);
-	if (!results)
-	  return null;
-	if (!results[2])
-	  return '';
-	return decodeURIComponent(results[2].replace(/\+/g, ' '));
 }
 
 // On application start, perform these
