@@ -11,7 +11,7 @@ body, header, main, section, article, footer, .container, a.navLink, button#btnM
 	flex-wrap: wrap;
 }
 
-body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container, footer p#copyright, div.fields, form, label, div.fields input, div.fields textarea, div.contact.field, #googleMapAddress, p{
+body, header, main, footer, section, .container, .navContainer, a.navLink, div.navigation, div.footerArea, .social-media-container, footer p#copyright, div.fields, form, label, div.fields input, div.fields textarea, div.contact.field, #googleMapAddress, p, li.property-neighborhood-list-item, li.property-feature-list-item, li.property-title-list-item{
 	width: 100%;
 	max-width: 100%;
 }
@@ -713,6 +713,10 @@ i.social-media-icon {
 
 p.footer-contact-detail {
     width: 250px;
+}
+
+aside.property-form-container {
+    padding: 10px;
 }
 
 @media screen and (max-height: 450px) {
