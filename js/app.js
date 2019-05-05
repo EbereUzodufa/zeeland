@@ -238,17 +238,21 @@ const navSlider = () => {
 	const nextBtn = document.querySelector('a.slide-nav.right');
 	const prevBtn = document.querySelector('a.slide-nav.left');
 
-	nextBtn.addEventListener('click', function(){
-		slideIndex += 0;
-		endSliderTimeOut();
-		activateSlider();
-	});
+	if(nextBtn){
+		nextBtn.addEventListener('click', function(){
+			slideIndex += 0;
+			endSliderTimeOut();
+			activateSlider();
+		});
+	}
 
-	prevBtn.addEventListener('click', function(){
-		slideIndex += -2;
-		endSliderTimeOut();
-		activateSlider();
-	});
+	if(prevBtn){
+		prevBtn.addEventListener('click', function(){
+			slideIndex += -2;
+			endSliderTimeOut();
+			activateSlider();
+		});
+	}
 
 }
 
@@ -653,6 +657,35 @@ const propertyURL = (id) =>{
 	return (`./property.html?id=${id}`);
 }
 
+//Show clicked Property
+const displayProperty = () => {
+	const id = getPropertyId();
+	if(id) {
+		properties.map(prop =>{
+			if (prop.id == id) {
+				document.title = prop.name +' | Zeeland Homes Property';
+				selectedPropertyHTML(prop);
+				// return console.log(prop);
+			}
+		});
+	}
+	// console.log(id);
+}
+
+//Get this Property from this ID
+getPropertyId = (url) => {
+	let id = 'id';
+	if (!url)
+	  url = window.location.href;
+	id = id.replace(/[\[\]]/g, '\\$&');
+	const regex = new RegExp(`[?&]${id}(=([^&#]*)|&|#|$)`),
+	  results = regex.exec(url);
+	if (!results)
+	  return null;
+	if (!results[2])
+	  return '';
+	return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
 // On application start, perform these
 const startApp = () => {
