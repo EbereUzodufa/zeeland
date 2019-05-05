@@ -659,7 +659,6 @@ getBlog = () =>{
 
 //Create property URL
 const createItemURL = (itemURL, id) =>{
-	return (`./property.html?id=${id}`);
 	return (itemURL + '?id=' + id);
 }
 
