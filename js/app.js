@@ -1075,6 +1075,51 @@ const selectedPropertyHTML = (property) =>{
 		
 		articleProp.append(frag);
 	}
+
+	if(images){
+		//Find the div for property slider
+		const sliderPropDiv = document.querySelector('div.property.slider.image');
+		if(sliderPropDiv){
+			const frag = document.createDocumentFragment();
+			images.forEach(image => {
+				frag.append(generatePropertySlider(image));
+			});
+			sliderPropDiv.append(frag);
+			activateSlider();
+		}
+		//Create thumbnails of images
+		const propThumbnail = document.querySelector('div.property-images-thumbnail');
+		if (propThumbnail) {
+			const fragThumbnail = document.createDocumentFragment();
+			images.forEach(image => {
+				const img = document.createElement('img'); //create slide image
+				img.src = imgPropertiesFolder + "/" + image;
+				img.classList.add('slide-img-thumbnail');
+				//Append image to fragment
+				fragThumbnail.append(img);
+			});
+		
+			//Append fragment to div
+			propThumbnail.append(fragThumbnail);
+		}
+	}
+}
+
+//Property slider
+//Create property slider array
+const generatePropertySlider = (image) =>{
+	//create div image slider
+	const divImageSlider = document.createElement('div');
+	divImageSlider.classList.add('container', 'slide', 'fade');
+
+	//Create fragment for optimization
+	const img = document.createElement('img'); //create slide image
+	img.src = imgPropertiesFolder + "/" + image;
+	img.classList.add('slide-img');
+	//Append image to div
+	divImageSlider.append(img);
+
+	return divImageSlider;
 }
 
 function initMap() {
