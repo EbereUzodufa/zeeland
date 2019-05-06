@@ -238,6 +238,11 @@ const endSliderTimeOut = () =>{
 	window.clearTimeout(timeId);
 }
 
+const resetSlider = () =>{
+	endSliderTimeOut();
+	activateSlider();
+}
+
 //Show previous and next slide
 const navSlider = () => {
 	const nextBtn = document.querySelector('a.slide-nav.right');
@@ -246,16 +251,14 @@ const navSlider = () => {
 	if(nextBtn){
 		nextBtn.addEventListener('click', function(){
 			slideIndex += 0;
-			endSliderTimeOut();
-			activateSlider();
+			resetSlider();
 		});
 	}
 
 	if(prevBtn){
 		prevBtn.addEventListener('click', function(){
 			slideIndex += -2;
-			endSliderTimeOut();
-			activateSlider();
+			resetSlider();
 		});
 	}
 
