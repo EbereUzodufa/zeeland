@@ -1016,7 +1016,7 @@ const selectedPropertyHTML = (property) =>{
 
 					//Append the fragment to ul
 					const ulNeighborhood = document.createElement('ul');
-					ulNeighborhood.classList.add("property-Neighborhood-list", "container");
+					ulNeighborhood.classList.add("property-neighborhood-list", "container");
 					ulNeighborhood.innerHTML = "Property Neighborhoods";
 					
 					//Append fragment to ul
