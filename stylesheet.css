@@ -244,6 +244,9 @@ p.navItem {
 .homepage.slider.image,  .slider.image, .blog-post-image-wrap.container{
     width: 100%;
 	height: 40vh;
+}
+
+.homepage.slider.image,  .slider.image{
 	display: grid;
 	grid-template-columns: 10% 80% 10%;
     grid-template-rows: 10% 80% 10%;
@@ -795,6 +798,11 @@ p.blog-post-content.blog-post-p {
 
 li.blog-post-content.blog-post-li {
     width: 100%;
+}
+
+.blog-post-header-img{
+	width: 100%;
+	height: 100%;
 }
 
 @media screen and (max-height: 450px) {
