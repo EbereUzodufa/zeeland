@@ -241,7 +241,7 @@ p.navItem {
 	width: auto;
 }
 
-.homepage.slider.image,  .slider.image{
+.homepage.slider.image,  .slider.image, .blog-post-image-wrap.container{
     width: 100%;
 	height: 40vh;
 	display: grid;
@@ -768,6 +768,35 @@ p.property-characteristic span, li.property-title-list-item, li.property-feature
     font-weight: normal;
 }
 
+.blog-post-date-wrap.container {
+    background: #bf9f62;
+}
+
+.blog-post-date-wrap.container p{
+    text-align: center;
+    font-size: 1.1em;
+    color: #fff;
+    font-weight: bold;
+}
+
+section.post-content {
+    padding: 10px 20px;
+}
+
+article.blog-post-content.blog-post-article.container {
+    padding: 0px;
+    max-width: 100%;
+    margin: 10px auto;
+}
+
+p.blog-post-content.blog-post-p {
+	margin: 0px;
+}
+
+li.blog-post-content.blog-post-li {
+    width: 100%;
+}
+
 @media screen and (max-height: 450px) {
 	nav{
 		height: 100%;
@@ -781,7 +810,7 @@ p.property-characteristic span, li.property-title-list-item, li.property-feature
 }
 
 @media screen and (min-width: 1000px) {
-	.homepage.slider.image, .slider.image{
+	.homepage.slider.image, .slider.image, .blog-post-image-wrap.container{
 		height: 80vh;
 	}
 	p.slide-name{
@@ -896,4 +925,10 @@ p.property-characteristic span, li.property-title-list-item, li.property-feature
 	footer div.footerArea{
 		width: 30%;
 	}
+
+	section.post-content {
+        width: 1000px;
+        max-width: 80%;
+        margin: auto
+    }
 }
