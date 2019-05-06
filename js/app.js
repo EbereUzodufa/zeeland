@@ -1385,11 +1385,11 @@ const selectedBlogHTML = (blog) =>{
 	//Get the header section to place image and title
 	const headerSection = document.querySelector("section.post-header");
 
-	//Create a fragment to easy append header section elements
-	const fragHeader = document.createDocumentFragment(); 
-
 	//if there is header section
 	if (headerSection) {
+		//Create a fragment to easy append header section elements
+		const fragHeader = document.createDocumentFragment(); 
+
 		// if we have title
 		if(title){
 			const divH1 = document.createElement('div');//h1 div
@@ -1440,6 +1440,162 @@ const selectedBlogHTML = (blog) =>{
 
 		//Append the fragment to section
 		headerSection.append(fragHeader);
+	}
+
+	const contentSection = document.querySelector("section.post-content");
+
+	if(contentSection){
+		if(blogStructure){
+			if (Array.isArray(blogStructure)) {
+				//Create fragment for optimization
+				const frag = document.createDocumentFragment();
+				blogStructure.forEach(struc=>{
+					console.log("structure", struc);
+					frag.append(createBlogElement(struc));
+				});
+				//Append fragment to content section
+				contentSection.append(frag);
+			} else {
+				console.log("Warning!!","blog structure is not an array")
+			}
+		}
+	}
+}
+
+const createBlogElement = (struc) =>{
+	if(struc.type == "p"){
+		const pCont = struc.content;
+		if(Array.isArray(pCont)){
+			const frag = document.createDocumentFragment();
+			pCont.forEach(pC=>{
+				console.log("p is an array", pC);
+				const p = document.createElement('p');
+				p.classList.add("blog-post-content", "blog-post-p");
+				p.innerHTML = pC;
+				frag.append(p);
+			});
+			//Append fragment to content section
+			return frag;
+		}
+		else{
+			const p = document.createElement('p');
+			p.classList.add("blog-post-content", "blog-post-p");
+			p.innerHTML = pCont;
+
+			return p;
+		}
+	}
+
+	if(struc.type == "h2"){
+		const h2 = document.createElement('h2');
+		h2.classList.add("blog-post-content", "blog-post-h2");
+		h2.innerHTML = struc.content;
+		
+		return h2;
+	}
+
+	if(struc.type == "h3"){
+		const h3 = document.createElement('h3');
+		h3.classList.add("blog-post-content", "blog-post-h3");
+		h3.innerHTML = struc.content;
+		
+		return h3;
+	}
+
+	if(struc.type == "ul"){
+		const ul = document.createElement('ul');
+		ul.classList.add("blog-post-content", "blog-post-ul", "container");
+
+		//get contents in the ul item
+		const ulChildren = struc.content;
+		
+		if (Array.isArray(ulChildren)) {
+			//Create fragment for optimization
+			const fragUl = document.createDocumentFragment();
+
+			ulChildren.forEach(cont=>{
+				console.log("ul Content", cont);
+
+				//Check if list has an object inside it
+				if(toString.call(cont) === "[object Object]" ){
+					console.log("KKKK", cont);
+					fragUl.append(createBlogElement(cont));
+				}
+				else{
+					const li = document.createElement('li');
+					li.classList.add("blog-post-content", "blog-post-li");
+					li.innerHTML = cont;
+					fragUl.append(li);
+				}
+			});
+			//Append fragment to content ul
+			ul.append(fragUl);
+		} 
+		else {
+			console.log("Warning!!","blog ul is not an array")
+		}
+
+		return ul;
+	}
+
+	if(struc.type == "ol"){
+		const ol = document.createElement('ol');
+		ol.classList.add("blog-post-content", "blog-post-ol", "container");
+
+		//get contents in the ol item
+		const olChildren = struc.content;
+		
+		if (Array.isArray(olChildren)) {
+			//Create fragment for optimization
+			const fragOl = document.createDocumentFragment();
+
+			olChildren.forEach(cont=>{
+				console.log("ol Content", cont);
+
+				//Check if list has an object inside it
+				if(toString.call(cont) === "[object Object]" ){
+					console.log("KKKK", cont);
+					fragOl.append(createBlogElement(cont));
+				}
+				else{
+					const li = document.createElement('li');
+					li.classList.add("blog-post-content", "blog-post-li");
+					li.innerHTML = cont;
+					fragOl.append(li);
+				}
+			});
+			//Append fragment to content ol
+			ol.append(fragOl);
+		} 
+		else {
+			console.log("Warning!!","blog ol is not an array")
+		}
+
+		return ol;
+	}
+
+	if(struc.type == "article"){
+		const article = document.createElement('article');
+		article.classList.add("blog-post-content", "blog-post-article", "container");
+
+		//Declare article content
+		const articleContent = struc.content;
+
+		if (Array.isArray(articleContent)) {
+			//Create fragment for optimization
+			const fragArticle = document.createDocumentFragment();
+
+			articleContent.forEach(cont=>{
+				console.log("article Content", cont);
+				fragArticle.append(createBlogElement(cont));
+			});
+			//Append fragment to content section
+			article.append(fragArticle);
+		} else {
+			console.log("Warning!!","blog article is not an array")
+		}
+		
+		return article;
 	}
 }
 
