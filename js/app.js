@@ -1476,7 +1476,7 @@ const selectedBlogHTML = (blog) =>{
 			divImage.classList.add("blog-post-image-wrap", "container");
 
 			const img = document.createElement('img');
-			img.classList.add('blog-post-image');
+			img.classList.add('blog-post-header-img');
 			img.src = imgBlogFolder + "/" + image;
 			img.alt = "Image of blog post, ";
 
