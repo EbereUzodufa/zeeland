@@ -54,7 +54,7 @@ h1,h2,h3{
 
 h1 {
     margin: 0px;
-    padding: 50px;
+    padding: 30px;
     text-align: center;
     vertical-align: middle;
     text-transform: uppercase;
@@ -241,7 +241,7 @@ p.navItem {
 	width: auto;
 }
 
-.homepage.slider.image {
+.homepage.slider.image,  .slider.image{
     width: 100%;
 	height: 40vh;
 	display: grid;
@@ -320,7 +320,7 @@ a.slide-nav:hover {
 	to {opacity: 1}
   }
 
-section.homepage.slider {
+section.homepage.slider, section#property-slider {
     margin: 0px;
 }
 
@@ -726,13 +726,13 @@ aside.property-form-container {
 }
 
 @media screen and (min-width: 500px) {
-	.homepage.slider.image{
+	.homepage.slider.image, .slider.image{
 		height: 65vh;
 	}
 }
 
 @media screen and (min-width: 1000px) {
-	.homepage.slider.image{
+	.homepage.slider.image, .slider.image{
 		height: 80vh;
 	}
 	p.slide-name{
