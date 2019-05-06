@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<style>
-		footer, section.map-area{
+		footer, section.map-area, section.property-title-header{
 			margin: 0px;
 		}
 	</style>
@@ -74,7 +74,17 @@
 	</header>
 	<main>
 		<section class="property-title-header"></section>
-		<section id="slider"></section>
+		<section id="property-slider">
+			<div class="property slider image">
+				<div style="z-index: 1;" class="slide-nav-container left">
+					<a role="button" class="slide-nav left"><</a>
+				</div>
+				<div style="z-index: 1;" class="slide-nav-container right">
+					<a role="button" class="slide-nav right">></a>
+				</div>
+			</div>
+			<div class="property-images-thumbnail container"></div>
+		</section>
 		<section class="content">
 			<aside class="property-form-container">
 				<article class="property-price"></article>
