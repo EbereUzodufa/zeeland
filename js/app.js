@@ -657,12 +657,12 @@ getBlog = () =>{
 
 //This area has functions that help display the individual properties
 
-//Create property URL
+//Create property/blog URL
 const createItemURL = (itemURL, id) =>{
 	return (itemURL + '?id=' + id);
 }
 
-//Get this Item ID from URL
+//Get this Item (property/blog) ID from URL
 getItemId = (url) => {
 	let id = 'id';
 	if (!url)
@@ -1360,6 +1360,24 @@ function initMap() {
 		}
 
 	}
+}
+
+//Create blog post
+//Show clicked Blog
+const displayBlog = () => {
+	const id = getItemId();
+	if(id) {
+		blog.map(b =>{
+			if (b.id == id) {
+				document.title = b.title +' | Zeeland Homes Limited, the most valuable real estate deals under the safest terms';
+				selectedBlogHTML(b);
+			}
+		});
+	}
+}
+
+const selectedBlogHTML = (blog) =>{
+	
 }
 
 // On application start, perform these
