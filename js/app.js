@@ -1377,7 +1377,70 @@ const displayBlog = () => {
 }
 
 const selectedBlogHTML = (blog) =>{
-	
+	const title = blog.title;
+	const image = blog.image;
+	const publishDate = blog.publishDate;
+	const blogStructure = blog.structure;
+
+	//Get the header section to place image and title
+	const headerSection = document.querySelector("section.post-header");
+
+	//Create a fragment to easy append header section elements
+	const fragHeader = document.createDocumentFragment(); 
+
+	//if there is header section
+	if (headerSection) {
+		// if we have title
+		if(title){
+			const divH1 = document.createElement('div');//h1 div
+			divH1.classList.add("title-wrap", "container");
+
+			const h1 = document.createElement('h1');
+			h1.innerHTML = title;
+			//Append h1 to div
+			divH1.append(h1);
+
+			//Append div to header fragment
+			fragHeader.append(divH1);
+		}
+
+		//if we have publish date
+		if(publishDate){
+			const divDate = document.createElement('div');//h1 div
+			divDate.classList.add("blog-post-date-wrap", "container");
+
+			const p = document.createElement('p');
+			const pDate = new Date(publishDate);
+			// console.log("Datee", pDate.toDateString());
+			//Get the in a human-readable string
+			p.innerHTML = pDate.toDateString();
+			//Append p to div
+			divDate.append(p);
+
+			//Append div to header fragment
+			fragHeader.append(divDate);
+		}
+
+		//if we have an image
+		if(image){
+			const divImage = document.createElement('div');//h1 div
+			divImage.classList.add("blog-post-image-wrap", "container");
+
+			const img = document.createElement('img');
+			img.classList.add('blog-post-image');
+			img.src = imgBlogFolder + "/" + image;
+			img.alt = "Image of blog post, ";
+
+			//Append blog image to div
+			divImage.append(img);
+
+			//Append div to header fragment
+			fragHeader.append(divImage);
+		}
+
+		//Append the fragment to section
+		headerSection.append(fragHeader);
+	}
 }
 
 // On application start, perform these
