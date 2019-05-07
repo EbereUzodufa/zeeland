@@ -7,6 +7,7 @@
 	<link rel="icon" href="images/logo.png">	
 	<link rel="stylesheet" type="text/css" href="stylesheet.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
 	<header>
@@ -68,6 +69,136 @@
 		</div>
 	</header>
 	<main>
+		<section class="preloader">
+			<div class="lds-css ng-scope">
+				<div style="width:100%;height:100%" class="lds-facebook">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<style type="text/css">
+					@keyframes lds-facebook_1 {
+						0% {
+						top: 36px;
+						height: 128px;
+						}
+						50% {
+						top: 60px;
+						height: 80px;
+						}
+						100% {
+						top: 60px;
+						height: 80px;
+						}
+					}
+					@-webkit-keyframes lds-facebook_1 {
+					0% {
+						top: 36px;
+						height: 128px;
+					}
+					50% {
+						top: 60px;
+						height: 80px;
+					}
+					100% {
+						top: 60px;
+						height: 80px;
+					}
+					}
+					@keyframes lds-facebook_2 {
+					0% {
+						top: 41.99999999999999px;
+						height: 116.00000000000001px;
+					}
+					50% {
+						top: 60px;
+						height: 80px;
+					}
+					100% {
+						top: 60px;
+						height: 80px;
+					}
+					}
+					@-webkit-keyframes lds-facebook_2 {
+					0% {
+						top: 41.99999999999999px;
+						height: 116.00000000000001px;
+					}
+					50% {
+						top: 60px;
+						height: 80px;
+					}
+					100% {
+						top: 60px;
+						height: 80px;
+					}
+					}
+					@keyframes lds-facebook_3 {
+					0% {
+						top: 48px;
+						height: 104px;
+					}
+					50% {
+						top: 60px;
+						height: 80px;
+					}
+					100% {
+						top: 60px;
+						height: 80px;
+					}
+					}
+					@-webkit-keyframes lds-facebook_3 {
+					0% {
+						top: 48px;
+						height: 104px;
+					}
+					50% {
+						top: 60px;
+						height: 80px;
+					}
+					100% {
+						top: 60px;
+						height: 80px;
+					}
+					}
+					.lds-facebook {
+					position: relative;
+					}
+					.lds-facebook div {
+					position: absolute;
+					width: 30px;
+					}
+					.lds-facebook div:nth-child(1) {
+					left: 35px;
+					background: #291670;
+					-webkit-animation: lds-facebook_1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					animation: lds-facebook_1 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					-webkit-animation-delay: -0.2s;
+					animation-delay: -0.2s;
+					}
+					.lds-facebook div:nth-child(2) {
+					left: 85px;
+					background: #ff0f0f;
+					-webkit-animation: lds-facebook_2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					animation: lds-facebook_2 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					-webkit-animation-delay: -0.1s;
+					animation-delay: -0.1s;
+					}
+					.lds-facebook div:nth-child(3) {
+					left: 135px;
+					background: #bf9f62;
+					-webkit-animation: lds-facebook_3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					animation: lds-facebook_3 1s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+					}
+					.lds-facebook {
+					width: 200px !important;
+					height: 200px !important;
+					-webkit-transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+					transform: translate(-100px, -100px) scale(1) translate(100px, 100px);
+					}
+				</style>
+			</div>
+		</section>
 		<section class="post-header"></section>
 		<section class="post-content"></section>
 	</main>
@@ -114,6 +245,7 @@
 		</div>
 		<p id="copyright">&copy; 2019 | All Rights Reserved.</p>
 	</footer>
+	<script src="js/preload.js"></script>
 	<script src="js/app.js"></script>
 	<script>
 		window.addEventListener('load', function() {
