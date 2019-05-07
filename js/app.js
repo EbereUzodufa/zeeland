@@ -22,6 +22,31 @@ let timeId; //I use this to control timer on slider
 const propertyURL = "./property.html";
 const blogURL = "./blog-post.html";
 // const logoURL = "images/logo.png";
+
+//Object for image size and width
+const imgSrcSetWidths = [
+	{
+		"size": "150px",
+		"width": "150w"
+	},
+	{
+		"size": "300px",
+		"width": "300w"
+	},
+	{
+		"size": "480px",
+		"width": "480w"
+	},
+	{
+		"size": "600px",
+		"width": "600w"
+	},
+	// {
+	// 	"size": "800px",
+	// 	"width": "800w"
+	// }
+]
+
 //Set aria-hidden property
 SetAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
@@ -160,6 +185,8 @@ const createSliderHTML = (slide) =>{
 	img.src = imgPropertiesFolder + "/" + image;
 	img.alt = "image of property, " + name;
 	img.classList.add('slide-img');
+	img.srcset = generateImgSrcset(img.src);
+
 	//Append img to divCSF
 	divCSF.append(img);
 	
@@ -415,6 +442,7 @@ const createPropertyHTML = (property) =>{
 	imgProperty.classList.add('property-image');
 	imgProperty.src = imgPropertiesFolder + "/" + images[0];
 	imgProperty.alt = "Image of " + name;
+	imgProperty.srcset = generateImgSrcset(imgProperty.src);
 
 	//Append image (imgProperty) to divConProperty
 	divConProperty.append(imgProperty);
@@ -548,6 +576,8 @@ const createBlogHTML = (post) =>{
 	img.classList.add('blog-post-image');
 	img.src = imgBlogFolder + "/" + image;
 	img.alt = "Image of blog post, ";
+	img.srcset = generateImgSrcset(img.src);
+
 	//Append img to divBlogCon
 	divBlogCon.append(img);
 
@@ -658,6 +688,20 @@ getBlog = () =>{
 		generateFeaturedBlogHTML();
 	});
 }
+
+const generateImgSrcset = (img) =>{
+	const syntax = ".jpg"
+	const syntaxPos = img.indexOf(syntax);
+	const imgSrc = img.slice(0, (syntaxPos));
+	let imgSrcSet = "";
+
+	imgSrcSetWidths.forEach(imgSrcSetWidth =>{
+		imgSrcSet += imgSrc + "-" + imgSrcSetWidth.size +  syntax + " " + imgSrcSetWidth.width + ", ";
+	})
+
+	return imgSrcSet;
+}
+
 
 //This area has functions that help display the individual properties
 
@@ -1098,6 +1142,8 @@ const selectedPropertyHTML = (property) =>{
 				const img = document.createElement('img'); //create slide image
 				img.src = imgPropertiesFolder + "/" + image;
 				img.classList.add('slide-img-thumbnail');
+				img.srcset = generateImgSrcset(img.src);
+
 				//Append image to fragment
 				fragThumbnail.append(img);
 			});
@@ -1119,6 +1165,8 @@ const generatePropertySlider = (image) =>{
 	const img = document.createElement('img'); //create slide image
 	img.src = imgPropertiesFolder + "/" + image;
 	img.classList.add('slide-img');
+	img.srcset = generateImgSrcset(img.src);
+
 	//Append image to div
 	divImageSlider.append(img);
 
@@ -1479,6 +1527,7 @@ const selectedBlogHTML = (blog) =>{
 			img.classList.add('blog-post-header-img');
 			img.src = imgBlogFolder + "/" + image;
 			img.alt = "Image of blog post, ";
+			img.srcset = generateImgSrcset(img.src);
 
 			//Append blog image to div
 			divImage.append(img);
