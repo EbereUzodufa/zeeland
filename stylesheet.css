@@ -800,6 +800,54 @@ li.blog-post-content.blog-post-li {
     width: 100%;
 }
 
+.container.property-characteristics {
+    border-top: 6px solid #291670;
+    background: #f0f0f0;
+}
+
+ul.property-prices-list, ul.property-neighborhood-list, ul.property-feature-list{
+    padding-right: 5px;
+    padding-top: 5px;
+    width: 100%;
+    padding-bottom: 5px;
+    padding: 10px 20px;
+    list-style-type: none;
+}
+
+ul.property-prices-list, ul.property-neighborhood-list{
+    background: rgba(240,240,240,0.8);
+    border-left: 6px solid #291670;
+}
+
+li.property-title-list-item, li.property-feature-list-item, li.property-neighborhood-list-item, li.property-prices-list-item{
+    margin: 10px
+}
+
+li.property-prices-list-item::before, li.property-neighborhood-list-item::before, li.property-feature-list-item::before {
+    margin-left: -1em;
+    padding-right: 5px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+li.property-prices-list-item::before, li.property-neighborhood-list-item::before{
+    color: #bf9f62;
+}
+
+li.property-prices-list-item::before{
+    content: "◈";
+}
+
+li.property-neighborhood-list-item::before{
+    content: "֍";
+}
+
+li.property-feature-list-item::before {
+    content: "✓";
+    color: #291670;
+
+}
+
 .blog-post-header-img{
 	width: 100%;
 	height: 100%;
