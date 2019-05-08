@@ -48,6 +48,22 @@ const imgSrcSetWidths = [
 	// }
 ]
 
+
+/*Adding service Worker*/
+
+if ('serviceWorker' in navigator) {
+	window.addEventListener('load', function() {
+			navigator.serviceWorker.register('../sw.js')
+			.then(function(registration) {
+				console.log('ServiceWorker registration successful');
+			})
+		.catch(function(err) {
+				console.log('ServiceWorker registration failed: ' + err);
+	});
+	});
+};
+//////////////////////////
+
 //Set aria-hidden property
 const setAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
