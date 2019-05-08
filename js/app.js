@@ -17,6 +17,7 @@ const slideSecDuration = 6; //Number of seconds before image changes;
 const slideDur = slideSecDuration * 1000; //Number of milliseconds before image changes
 let slideIndex = 0;
 let timeId; //I use this to control timer on slider
+let timeIdS; //I use this to control timer on slider
 
 //Individual URL for blog and property
 const propertyURL = "./property.html";
@@ -48,7 +49,7 @@ const imgSrcSetWidths = [
 ]
 
 //Set aria-hidden property
-SetAriaHidden = (val) =>{
+const setAriaHidden = (val) =>{
 	overlay.setAttribute('aria-hidden', val);
 }
 
@@ -67,11 +68,11 @@ const setOverlay = (value) =>{
 		overlay.style.width = '100%';
 		overlay.scrollTop = 0;
 		body.classList.add('noScroll');
-		SetAriaHidden('false');
+		setAriaHidden('false');
 	} else{
 		overlay.style.width = '0%';
 		body.classList.remove('noScroll');
-		SetAriaHidden('true');
+		setAriaHidden('true');
 	}
 };
 
@@ -111,12 +112,12 @@ const setZnav = () =>{
 }
 
 //Change ARIA based on screen width
-const SetAriaBasedOnScreen = () =>{
+setAriaBasedOnScreen = () =>{
 	const screenWidth = screen.width;
 	if (screenWidth >= 1024) {
-		SetAriaHidden('false');
+		setAriaHidden('false');
 	} else {
-		SetAriaHidden('true');
+		setAriaHidden('true');
 	}
 }
 
@@ -152,7 +153,9 @@ const fetchJSONFromFile = (arrayEle, file) =>{
 	    console.log('Request succeeded with JSON response', data);
 	  }).catch(function(error) {
 	    console.log('Request failed', error);
-	  });
+		});
+		
+		return;
 }
 
 //Fetch JSON for slider
@@ -234,7 +237,7 @@ const createSliderHTML = (slide) =>{
 }
 
 //Lets make us our slider
-getSlide = () =>{
+const getSlide = () =>{
 	fetchSlider();
 	window.addEventListener('load', function() {
 		generateSliderHTML();
@@ -245,15 +248,18 @@ getSlide = () =>{
 const activateSlider = () =>{
 	let i;
 	let slides = document.querySelectorAll("div.container.slide.fade");
-	for (i = 0; i < slides.length; i++) {
-		slides[i].style.display = "none";  
+	console.log(slides);
+	if(slides.length != 0){
+		for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		}
+		slideIndex++;
+		if (slideIndex > slides.length) {slideIndex = 1}
+			if (slideIndex < 1) {slideIndex = slides.length}    
+		
+		// console.log(slideIndex);
+		slides[slideIndex-1].style.display = "grid";
 	}
-	slideIndex++;
-	if (slideIndex > slides.length) {slideIndex = 1}
-  	if (slideIndex < 1) {slideIndex = slides.length}    
-	
-	// console.log(slideIndex);
-	slides[slideIndex-1].style.display = "grid";  
 	startSliderTimeOut();
 }
 
@@ -311,7 +317,7 @@ const generateSocialMediaHTML = () =>{
 //Create HTML for social media
 const createSocialMediaHTML = (socialMedia) =>{
 	const title = socialMedia.title;
-	const link = socialMedia;
+	const link = socialMedia.link;
 
 	const divConSocialMedia = document.createElement('div');
 	divConSocialMedia.classList.add('social-media');
@@ -366,11 +372,18 @@ const createFontAwesomeIcon = (title) =>{
 }
 
 //Let's do this. Get our social media and load them in
-getSocialMedia = () =>{
-	fetchSocialMedia();
-	window.addEventListener('load', function() {
-		generateSocialMediaHTML();
-	});
+const getSocialMedia = () =>{
+	$.ajax({
+		url:fetchSocialMedia(),
+		success:function(){
+			generateSocialMediaHTML();
+		}
+	})
+	// $.when(fetchSocialMedia()).done(generateSocialMediaHTML());
+	// fetchSocialMedia();
+	// window.addEventListener('load', function() {
+	// 	generateSocialMediaHTML();
+	// });
 }
 
 //Fecth JSON for Property
@@ -385,7 +398,7 @@ const generatePropertyHTML = () =>{
 	if (propertyArticle) {
 		const div = document.createDocumentFragment();
 		properties.forEach(property =>{
-			// console.log(property.id, property);
+			console.log(property.id, property);
 			div.append(createPropertyHTML(property));
 		});
 		propertyArticle.append(div);
@@ -397,6 +410,7 @@ const generateFeaturedPropertyHTML = () =>{
 	if (propertyArticle) {
 		const div = document.createDocumentFragment();
 		for (let i = 0; i < 6; i++) {
+			console.log(i, properties[i]);
 			div.append(createPropertyHTML(properties[i]));
 		}
 		propertyArticle.append(div);
@@ -405,6 +419,7 @@ const generateFeaturedPropertyHTML = () =>{
 
 //Create HTML for Property
 const createPropertyHTML = (property) =>{
+	console.log(property);
 	const id = property.id;
 	const name = property.name;
 	const address = property.address;
@@ -521,12 +536,31 @@ const createPropertyHTML = (property) =>{
 	return divConProperty;
 }
 
-getProperties = () =>{
+const getProperties = () =>{
+	// $.when(fetchProperties()).then(
+	// 	$.ajax({
+	// 		url:generatePropertyHTML(),
+	// 		success:function(){
+	// 			// generatePropertyHTML();
+	// 			generateFeaturedPropertyHTML();
+	// 		}
+	// 	})
+	// )
 	fetchProperties();
 	window.addEventListener('load', function() {
-		generatePropertyHTML();
-		generateFeaturedPropertyHTML();
+		console.log(properties);
+		if(properties.length != 0){
+			generatePropertyHTML();
+			generateFeaturedPropertyHTML();
+		}
 	});
+
+	// new Promise(() => {
+	// 	fetchProperties();
+	// })
+	// .then(generatePropertyHTML())
+	// // .then(generateFeaturedPropertyHTML())
+	// .catch(console.log('Err in getProperties'));
 }
 
 //Get Blog data
@@ -681,11 +715,20 @@ const getOutPara = (value) =>{
 	return (Array.isArray(value) ? value[0] : value)
 }
 
-getBlog = () =>{
+const getBlog = () =>{
+	// $.ajax({
+	// 	url:generateBlogHTML(),
+	// 	success:function(){
+	// 		generateBlogHTML();
+	// 		generateFeaturedBlogHTML();
+	// 	}
+	// })
 	fetchBlog();
 	window.addEventListener('load', function() {
-		generateBlogHTML();
-		generateFeaturedBlogHTML();
+		if(blog.length != 0){
+			generateBlogHTML();
+			generateFeaturedBlogHTML();
+		}
 	});
 }
 
@@ -1152,6 +1195,8 @@ const selectedPropertyHTML = (property) =>{
 			propThumbnail.append(fragThumbnail);
 		}
 	}
+	
+	initMap();
 }
 
 //Property slider
@@ -1174,7 +1219,7 @@ const generatePropertySlider = (image) =>{
 }
 
 function initMap() {
-	// The location of Uluru
+	// The location
 	const id = getItemId();
 
 	if(id){
@@ -1697,15 +1742,103 @@ const createBlogElement = (struc) =>{
 	}
 }
 
+const getDepFunction = () =>{
+	generateSocialMediaHTML();
+
+	generatePropertyHTML();
+	generateFeaturedPropertyHTML();
+
+	generateBlogHTML();
+	generateFeaturedBlogHTML();
+
+	generateSliderHTML();
+
+	if(top.document.location.pathname == "/property.html"){
+		displayProperty();
+	}
+
+	if(top.document.location.pathname == "/blog-post.html"){
+		displayBlog();
+	}
+
+	endFunctTimeOut();
+}
+
+const startFunctTimeOut = () =>{
+	timeIdS = 	window.setTimeout(getDepFunction, 2000); 
+	console.log("dd*in");
+}
+
+const endFunctTimeOut = () =>{
+	window.clearTimeout(timeIdS);
+	console.log("dd*out");
+}
+
 // On application start, perform these
 const startApp = () => {
 	toggleMenuBtn(); //Enable Toggle Menu
-	SetAriaBasedOnScreen();
-	getSocialMedia();
-	getProperties();
-	getBlog();
-	getSlide();
+	setAriaBasedOnScreen();
+
+	// new Promise( () => {
+	// 	getSocialMedia()
+	// })
+	// .then(getProperties())
+	// .then(getBlog())
+	// .then(getSlide())
+	// .then(navSlider())
+	// .catch(
+	// 	console.log("err!!!", Error)
+	// );
+	
+	// getSocialMedia();
+	// getProperties();
+	// getBlog();
+	// getSlide();
+	// navSlider();
+
+	fetchSocialMedia();
+	fetchProperties();
+	fetchBlog();
+	fetchSlider();
 	navSlider();
+
+	// // window.addEventListener('load', function() {
+	// 	generateSocialMediaHTML();
+
+	// 	generatePropertyHTML();
+	// 	generateFeaturedPropertyHTML();
+
+	// 	generateBlogHTML();
+	// 	generateFeaturedBlogHTML();
+
+	// 	generateSliderHTML();
+	// // })
+
+	// startFunctTimeOut();
+	// endFunctTimeOut();
 };
 
+// $.ajax({
+// 	url:startApp(),
+// 	success:function(){
+// 		getDepFunction();
+// 	}
+// })
+
+// $.when(startApp()).then(getDepFunction());
+
 startApp();
+// $.ajax({
+// 	url:startApp(),
+// 	success:function(){
+// 		getDepFunction();
+// 	}
+// })
+
+// window.setInterval(getDepFunction, 4000);
+
+window.addEventListener('load', function() {
+	console.log("dd*");
+	startFunctTimeOut();
+	// endFunctTimeOut();
+});
