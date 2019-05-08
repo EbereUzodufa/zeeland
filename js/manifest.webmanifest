@@ -1,0 +1,22 @@
+{
+    "dir" : "ltr",
+    "lang" : "en",
+    "name" : "Zeeland Homes Limited",
+    "scope" : "/",
+    "display" : "standalone",
+    "start_url" : "https://zeelandhomesltd.com/",
+    "short_name" : "Zeeland",
+    "theme_color" : "#291670",
+    "description" : "The most valuable real estate deals under the safest terms.",
+    "orientation" : "any",
+    "background_color" : "#fff",
+    "related_applications" : "",
+    "prefer_related_applications" : "false",
+    "generated" : "true",
+    "icons" : [
+        {
+            "src": "https://zeelandhomesltd.com/images/logo.png",
+            "sizes": "100x100"
+        }
+    ]
+}
